@@ -25,15 +25,10 @@ Route::get('/single/{id}','course\CoursesController@single')->name('test');
 		  Route::prefix('/{course:slug}')->group(function()
 		  {
 			Route::get('/','CoursesController@view')->name('view');
-			Route::get('/{id}','CoursesController@action')->name('action');
+			Route::get('/{id}','CoursesController@single')->name('action');
 
 			//Otabek shotta qilish kere {course:slug}/{lesson:slug}
-
-
-
-
-
-
+			
 			// Route::get('/lesson/{id}','CoursesController@view')->name('lesson');
 			// Route::get('/lesson/{id}','CourseController@lesson')->name('view_lesson');
 			// Route::get('lesson/{id}','CoursesController@lessonn')->name('lesson');

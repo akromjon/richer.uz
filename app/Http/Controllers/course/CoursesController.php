@@ -34,9 +34,9 @@ class CoursesController extends Controller
         return view('course.single_course',compact('courses','sections','lessons','all_sections'));
     }
     
-    public function single($id)
+    public function single(Lesson $slug)
     {
-        $courses=Course::find($id);
+        $courses=Course::first();
         $all_sections=CourseSection::all();      
         $sections=CourseSection::all();        
         $lessons=Lesson::all();

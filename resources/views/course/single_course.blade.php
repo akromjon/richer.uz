@@ -167,7 +167,7 @@
 						
 						<!-- <div class="price" style="color: red"><span></span> Bepul  <s style="color: black"><strong><br>69 000</strong> </s></div>						 -->
 						
-						<!-- <button style="width:100%" href="" type="submit" class="btn btn-lg btn-info">Kursni boshlash</button> -->
+						<button style="width:100%" href="" type="submit" class="btn btn-lg btn-info">Kursni boshlash</button> 
 						<h5 class="subtitle text-left">Kurs quyidagilarni o'z ichiga oladi</h5>
 						<ul class="price_quere_list text-left">
 							<li><a href="#"><i class="fa fa-play" aria-hidden="true"></i> {{$courses->section}} Darslar</a></li>

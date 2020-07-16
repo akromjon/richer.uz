@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="uz" class=" js no-touch csstransitions"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<!-- css file -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/login_style.css">
+	<!-- Responsive stylesheet -->
+	<link rel="stylesheet" href="css/responsive.css">
+	<!-- Title -->
+	<title>Onlayn Kurs</title>
+	<!-- Favicon -->
+	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon">
+	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon">
+	<style type="text/css">
+	.list_two:hover,.list_four:hover,.list_five:hover,.last:hover
+	{
+	text-decoration: underline;
+	}
+	</style>	
+</head>
+<body style="background-color: #bebebe8f;">
+	<div class="wrapper mm-page mm-slideout" id="mm-0">
+			<div class="preloader" style="display: none;"></div>
+			<!-- Modal Search Button Bacground Overlay -->
+			<!-- Main Header Nav For Mobile -->
+			<!-- /.mobile-menu -->	
+			<div id="page" class="stylehome1 h0">
+				<div class="mobile-menu">
+					<div class="header stylehome1">
+						<div class="main_logo_home2">
+				            <img class="nav_logo_img img-fluid float-left mt20" src="images/header-logo.png" alt="header-logo.png">
+				            <span>edumy</span>
+						</div>
+						<ul class="menu_bar_home2">
+							<li class="list-inline-item">	                	
+							</li>
+							<li class="list-inline-item">
+								<a href="#menu">
+									<span></span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>	
+			</div>
+		<!-- Inner Page Breadcrumb -->
+			<section class="inner_page_breadcrumb">
+			<!-- Main Header Nav -->
+				<div class="header_top home3">
+					<div class="container-fluid">
+						<div class="row" >				
+							<div class="col-lg-7 col-xl-7" style="margin-left: 45%;">
+						        <ul class="sign_up_btn pull-right dn-smd mt15 home3">		                
+					                <li class="list-inline-item">
+					                	<a href="login.html" class="btn btn-md">
+					                		<i class="flaticon-user"></i>
+					                		<span class="dn-md">Kirish | Ro'yhatdan O'tish</span>
+					                	</a>
+					                </li>						
+					            </ul><!-- Button trigger modal -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<header  class="header-nav menu_style_home_three navbar-scrolltofixed stricky main-menu" style="z-index: 1000;">
+					<div class="container-fluid">
+					    <!-- Ace Responsive Menu -->
+					    <nav>
+					        <!-- Menu Toggle btn-->
+						        <div class="menu-toggle" style="display: none;">
+						            <img class="nav_logo_img img-fluid" src="./index_files/header-logo3.png" alt="header-logo3.png">
+						            <button type="button" id="menu-btn">
+						                <span class="icon-bar"></span>
+						                <span class="icon-bar"></span>
+						                <span class="icon-bar"></span>
+						            </button>
+						        </div>
+						        <a href="https://grandetest.com/theme/edumy-html/index3.html#" class="navbar_brand float-left dn-smd">
+						            <img class="logo1 img-fluid" src="./index_files/header-logo.png" alt="header-logo.png">
+						            <img class="logo2 img-fluid" src="./index_files/header-logo2.png" alt="header-logo2.png">
+						            <span>Online Academy</span>
+						        </a>
+					        <!-- Responsive Menu Structure-->
+					        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->				
+					        	<ul id="respMenu" class="ace-responsive-menu" data-menu-style="horizontal">
+						            <li class="last">
+						                <a href="https://grandetest.com/theme/edumy-html/page-contact.html"><span class="title"><i class="fa fa-list-alt" aria-hidden="true"></i> Biz bilan aloqa</span></a>
+						            </li>
+					           		<li class="list_five">
+					                	<a href="https://grandetest.com/theme/edumy-html/index3.html#">
+					                		<span>
+					                			<i class="fa fa-paper-plane" aria-hidden="true"></i> Yangiliklar
+					                		</span>
+					                	</a>		               
+					            	</li>
+						            <li class="list_four">
+						                <a href="https://grandetest.com/theme/edumy-html/index3.html#">
+						                	<span class="title">
+						                		<i class="fa fa-check-square-o" aria-hidden="true"></i>onlayn Test
+						                	</span></a>		                
+						            </li>		            
+						            <li class="list_two">
+						                <a href="https://grandetest.com/theme/edumy-html/index3.html#">
+						                	<span class="title">
+						                		<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Kurslar
+						                	</span>
+						                </a>		                                	
+						            </li>		           
+					        	</ul>
+					    </nav>	    
+					</div>
+				</header>		
+			</section>
+			<!-- Our LogIn Register -->
+			<section class="home3_top_course pb0 pt0" style="margin-top: 25px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 offset-lg-3">
+							<div class="main-title text-center">
+								<h3 class="mt0" style="">Barcha kurslarni filtirlab ko'rish</h3>				
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					 	<div class="col-lg-12">
+					 		<div id="options" class="alpha-pag full">
+								<div class="option-isotop">
+									<ul id="filter" class="option-set" data-option-key="filter">
+										<li class="list-inline-item">
+											<a href="#all" data-option-value="*" class="selected">Barcha kurslar</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#business" data-option-value=".business">Beginner kursi</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#design" data-option-value=".design">Intermediate</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#web" data-option-value=".web">Advanced kursi</a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#marketing" data-option-value=".marketing">IELTS kursi</a>
+										</li>
+									</ul>
+								</div>
+							</div><!-- FILTER BUTTONS -->
+					 		<div class="emply-text-sec">
+					 			<div class="col-lg-6 offset-lg-3"></div>
+					 			<div class="row" id="masonry_abc" style="position: relative; height: 1789.5px;">
+					 				<div class="col-md-6 col-lg-4 col-xl-3 business design" style="position: absolute; left: 0px; top: 0px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t1.jpg" alt="t1.jpg">
+												<div class="overlay">												
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Introduction Web Design with HTML</h5>											
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 business marketing" style="position: absolute; left: 360px; top: 0px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t2.jpg" alt="t2.jpg">
+												<div class="overlay">												
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Designing a Responsive Mobile Website</h5>										
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 web design" style="position: absolute; left: 0px; top: 447px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t3.jpg" alt="t3.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Adobe XD: Prototyping Tips and Tricks</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 business Web" style="position: absolute; left: 360px; top: 447px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t4.jpg" alt="t4.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Sketch: Creating Responsive SVG</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 marketing" style="position: absolute; left: 360px; top: 869px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t5.jpg" alt="t5.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Design Instruments for Communication</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 business marketing" style="position: absolute; left: 0px; top: 894px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t6.jpg" alt="t6.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>How to be a DJ? Make Electronic Music</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 design Web" style="position: absolute; left: 360px; top: 1317px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t7.jpg" alt="t7.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>How to Make Beautiful Landscape Photos?</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 				<div class="col-md-6 col-lg-4 col-xl-3 business" style="position: absolute; left: 0px; top: 1342px;">
+										<div class="top_courses">
+											<div class="thumb">
+												<img class="img-whp" src="./index_files/t8.jpg" alt="t8.jpg">
+												<div class="overlay">
+													
+													
+													<a class="tc_preview_course" href="single_course.html">Darsni ko'rish</a>
+												</div>
+											</div>
+											<div class="details">
+												<div class="tc_content">
+													<p>Ali TUFAN</p>
+													<h5>Fashion Photography From Professional</h5>
+													
+												</div>
+												<div class="tc_footer">
+													<ul class="tc_meta float-left">
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-profile"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">1548</a></li>
+														<li class="list-inline-item"><a href="single_course.html"><i class="flaticon-comment"></i></a></li>
+														<li class="list-inline-item"><a href="single_course.html">25</a></li>
+													</ul>
+													<div class="tc_price float-right">39000 so'm</div>
+												</div>
+											</div>
+										</div>
+					 				</div>
+					 			</div>
+					 		</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							
+						</div>
+					</div>
+				</div>
+		</section>
+	</div>
+	<!-- Our Footer -->
+	<section class="footer_one">
+		<div class="container">
+			<div class="row center">
+				<div class="col-sm-6 col-md-4 col-md-3 col-lg-3">
+					<div class="footer_contact_widget">
+						<h4>Biz bilan aloqa qilish</h4>
+						<p>Agar sizda savol, taklif, shikoyat bo'lsa</p>
+						<p>Biz bilan bog'laning.</p>
+						<p><i class="fa fa-phone" aria-hidden="true"></i> +998 99 000 53 03</p>
+						<p class="email"><a class="email" href=""><i class="fa fa-envelope" aria-hidden="true"></i> akyprog@gmail.com</a></p>
+						<p class=""><a class="email" href=""><i class="fa fa-telegram" aria-hidden="true"></i> @akrom_numonov</a></p>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
+					<div class="footer_company_widget">
+						<h4>Saxifalar</h4>
+						<ul class="list-unstyled">
+							<li><a href="#">Bosh sahifa</a></li>
+							<li><a href="course.html">Kurslar</a></li>
+							<li><a href="#">Onlayn Test</a></li>
+							<li><a href="page-contact.html">Yangiliklar</a></li>
+							<li><a href="#">Biz bilan aloqa</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-md-3 col-lg-2">
+					<div class="footer_program_widget">
+						<h4>Biz Ijtimoiy tarmoqlarda</h4>
+						<ul class="list-unstyled">
+							<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+							<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+							<li><a href="#"><i class="fa fa-telegram" aria-hidden="true"></i> Telegram</a></li>	
+							<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>						
+						</ul>
+					</div>
+				</div>
+				
+				<div class="col-sm-6 col-md-6 col-md-3 col-lg-3">
+					<div class="footer_apps_widget">
+						<h4>Bizning ilova</h4>
+						<div class="app_grid">							
+							<button class="play_store_btn btn-dark">
+								<span class="icon">
+									<span class="flaticon-google-play"></span>
+								</span>
+								<span class="title">Google Play</span>
+								<span class="subtitle">Ko'chirish</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>	
+	<a class="scrollToHome home3" href="https://grandetest.com/theme/edumy-html/index3.html#">
+		<i class="flaticon-up-arrow-1"></i> tepaga
+	</a>
+	<!-- Wrapper End -->
+	<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="js/jquery-migrate-3.0.0.min.js"></script>
+	<script type="text/javascript" src="js/popper.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mmenu.all.js"></script>
+	<script type="text/javascript" src="js/ace-responsive-menu.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="js/isotop.js"></script>
+	<script type="text/javascript" src="js/snackbar.min.js"></script>
+	<script type="text/javascript" src="js/simplebar.js"></script>
+	<script type="text/javascript" src="js/parallax.js"></script>
+	<script type="text/javascript" src="js/scrollto.js"></script>
+	<script type="text/javascript" src="js/jquery-scrolltofixed-min.js"></script>
+	<script type="text/javascript" src="js/jquery.counterup.js"></script>
+	<script type="text/javascript" src="js/wow.min.js"></script>
+	<script type="text/javascript" src="js/progressbar.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript" src="js/timepicker.js"></script>
+	<!-- Custom script for all pages --> 
+	<script type="text/javascript" src="js/script.js"></script>	
+</body>
+</html>

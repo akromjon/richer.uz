@@ -20,7 +20,9 @@ class CreateLessonsTable extends Migration
             $table->integer('duration');
             $table->string('video');
             $table->bigInteger('section_id')->unsigned()->nullable();
-            $table->foreign('section_id')->references('id')->on('section_course');
+            $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->foreign('course_id')->references('id')->on('courses'); 
+            $table->foreign('section_id')->references('id')->on('sections');
             $table->timestamps();
         });
     }

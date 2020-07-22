@@ -1,22 +1,11 @@
 <div id="home"></div>
 <div class="emply-text-sec" style="margin-top:20px;">
-
-	<div class="col-lg-6 offset-lg-3">
-		<div class="main-title text-center">
-			<h3 title="BARCHA KURSLAR" class="mt0">Kurslar</h3>						
-		</div>
-	</div>
-	
+	@php if(Request::url()==route('all_courses')) {}else{$html="<div class='col-lg-6 offset-lg-3'><div class='main-title text-center'><h3 title='BARCHA KURSLAR' class='mt0'>Kurslar</h3></div></div>";
+	echo $html;}@endphp	
 	<div  class="row" id="masonry_abc" style="position: relative; height: 1789.5px;">
-		@foreach($courses as $course)
-		
-		<div class="col-md-6 col-lg-4 col-xl-3 
-		@foreach($course_categories as $course_category)
-		 @if($course_category->id==$course->course_category_id)
-		  {{$course_category->name}}
-		@endif
-		@endforeach" style="position: absolute; left: 0px; top: 0px;">
-
+		@foreach($courses as $course)		
+		<div class="col-md-6 col-lg-4 col-xl-3	{{$course->course_categories->id}}" style="position: absolute; left: 0px; top: 0px;">
+	
 			<div class="top_courses">
 				<div class="thumb">
 					<img class="img-whp" src="{{asset('assets/images/courses/t1.jpg')}}" alt="t1.jpg">
@@ -28,28 +17,22 @@
 					<div class="tc_content">
 						<p><i class="fa fa-graduation-cap" aria-hidden="true"></i> {{$course->teacher->name
 							}}</p>
-						<h5><a href="{{route('view',$course->id)}}">{{$course->name}}</a></h5>						
+						<h5><a href="{{route('view',$course->slug)}}">{{$course->name}}</a></h5>						
 					</div>
 					<div class="tc_footer">
 						<ul class="tc_meta float-left">
 							<li class="list-inline-item">
-								<a href="https://grandetest.com/theme/edumy-html/index3.html#">
-									<i class="flaticon-profile"></i>
+								<a href="{{route('view',$course->slug)}}">
+									<i class="flaticon-profile"></i> students
 								</a>
-							</li>
+							</li>							
 							<li class="list-inline-item">
-								<a href="https://grandetest.com/theme/edumy-html/index3.html#">{{$course->enrolled_students}}</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="https://grandetest.com/theme/edumy-html/index3.html#">
-									<i class="flaticon-comment"></i>
+								<a href="{{route('view',$course->slug)}}">
+									<i class="flaticon-comment"></i> {{$course->comments->count()}}
 								</a>
-							</li>
-							<li class="list-inline-item">
-								<a href="https://grandetest.com/theme/edumy-html/index3.html#">{{$course->videos}}</a>
-							</li>
+							</li>							
 						</ul>
-						<div class="tc_price float-right">{{$course->cost}} so'm</div>
+						<div class="tc_price float-right">{{$course->cost}}	</div>
 					</div>
 				</div>
 			</div>
@@ -60,7 +43,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t2.jpg')}}" alt="t2.jpg">
 											<div class="overlay">											
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -70,10 +53,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -85,7 +68,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t3.jpg')}}" alt="t3.jpg">
 											<div class="overlay">										
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -95,10 +78,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -110,7 +93,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t4.jpg')}}" alt="t4.jpg">
 											<div class="overlay">											
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -120,10 +103,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -135,7 +118,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t5.jpg')}}" alt="t5.jpg">
 											<div class="overlay">										
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -145,10 +128,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -160,7 +143,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t6.jpg')}}" alt="t6.jpg">
 											<div class="overlay">											
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -170,10 +153,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -185,7 +168,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t7.jpg')}}" alt="t7.jpg">
 											<div class="overlay">										
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -195,10 +178,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>
@@ -210,7 +193,7 @@
 										<div class="thumb">
 											<img class="img-whp" src="{{asset('assets/images/courses/t8.jpg')}}" alt="t8.jpg">
 											<div class="overlay">											
-												<a class="tc_preview_course" href="https://grandetest.com/theme/edumy-html/index3.html#">Darsni ko'rish</a>
+												<a class="tc_preview_course" href="">Darsni ko'rish</a>
 											</div>
 										</div>
 										<div class="details">
@@ -220,10 +203,10 @@
 											</div>
 											<div class="tc_footer">
 												<ul class="tc_meta float-left">
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-profile"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">1548</a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#"><i class="flaticon-comment"></i></a></li>
-													<li class="list-inline-item"><a href="https://grandetest.com/theme/edumy-html/index3.html#">25</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-profile"></i></a></li>
+													<li class="list-inline-item"><a href="">1548</a></li>
+													<li class="list-inline-item"><a href=""><i class="flaticon-comment"></i></a></li>
+													<li class="list-inline-item"><a href="">25</a></li>
 												</ul>
 												<div class="tc_price float-right">39000 so'm</div>
 											</div>

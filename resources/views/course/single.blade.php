@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class=" js no-touch csstransitions"><head>
-@include('layouts.head')
-
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+@include('layouts.head')	
     <title>{{$courses->name}}</title>
 </head>
-<body>
-	<!--this blocks inspect the element in the chrome-->
-	
+<body>	
 <div class="wrapper mm-page mm-slideout"  style="background-color: #cbcbcb;"  id="mm-0">
 	<!-- Inner Page Breadcrumb -->
 	<section class="inner_page_breadcrumb" >
 	<!-- Main Header Nav -->
 	@include('layouts.sign_up')
-	@include('layouts.menu')
-			
+	@include('layouts.menu')			
 	</section>	<!-- Our Team Members -->
 	<section class="our-team pb40" style="margin-top:20px;">
 		<div class="container">
@@ -33,12 +23,11 @@
 										<div class="courses_big_thumb">
 											<div class="thumb">
 												<!-- <iframe class="iframe_video" src="//www.youtube.com/embed/57LQI8DKwec" frameborder="0" allowfullscreen=""></iframe> -->
-												{!!$courses->intro!!}
+												{!!$video->video!!}							
 											</div>
 										</div>
 									</div>
-								</div>
-								
+								</div>								
 								<div class="cs_rwo_tabs csv2">
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<!-- <li class="nav-item">
@@ -52,71 +41,63 @@
 										</li>
 										<li class="nav-item">
 										    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false"> 
-										    <i class="fa fa-comments" aria-hidden="true"></i> Fikrlar</a>
+										    <i class="fa fa-comments" aria-hidden="true"></i> {{$video->comments->count()}} fikrlar</a>
 										</li>
 									</ul>
-									<div style="margin-top:30px;" class="tab-content" id="myTabContent">
-										
+									<div style="margin-top:30px;" class="tab-content" id="myTabContent">										
 										<div class="tab-pane fade show active" id="instructor" role="tabpanel" aria-labelledby="review-tab">
-											<div class="cs_row_four csv2">
-												<div class="about_ins_container">
-													<h4 class="aii_title">O'qituvchi haqida</h4>
-													<div class="about_ins_info">
-														<div class="thumb"><img src="{{asset('files/images/teachers/')}}/{{$courses->teacher->avatar}}" alt="6.png"></div>
-													</div>
-													<div class="details">									
-														<ul class="about_info_list">
-															<li class="list-inline-item"><span class="flaticon-comment"></span> 12 Fikrlar </li>
-															<li class="list-inline-item"><span class="flaticon-profile"></span> 14 O'quvchilar</li>
-															<li class="list-inline-item"><span class="flaticon-play-button-1"></span> 5 Kurslar </li>
-														</ul>
-														<h4>{{$courses->teacher->name}}</h4>
-														<p class="subtitle">{{$courses->teacher->subject}}</p>
-														<p class="mb25">{!!$courses->teacher->information!!} </p>
-														<p class="mb25">{{$courses->teacher->resume}}</p>														
-													</div>
-												</div>
-											</div>
+											@include('layouts.teacher')
 										</div>
-										<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-										<div class="cs_row_seven csv2">
-												<div class="sfeedbacks">
-													<div class="mbp_comment_form style2 pb0">
-														<h4>Taklif &amp; fikr bildirish</h4>
-														
-														<form class="comments_form">
-															<div class="form-group">
-														    	<label for="exampleInputName1">Fikr yoki taklif nomi</label>
-														    	<input type="text" placeholder="Taklif" class="form-control" id="exampleInputName1" aria-describedby="textHelp">
-															</div>
-															<div class="form-group">
-															    <label for="exampleFormControlTextarea1">Fikr yoki taklif</label>
-															    <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
-															</div>
-															<button type="submit" class="btn btn-thm">Jo'natish<span class="flaticon-right-arrow-1"></span></button>
-														</form>
-													</div>
-												</div>
-											</div>											
+										<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">																					
 											<div class="cs_row_six csv2">
-												<div class="sfeedbacks">
+											<div class="sfeedbacks">
+											
+													@foreach($video->comments as $comment)
+													
 													<div class="mbp_pagination_comments">
 														<div class="mbp_first media csv1">
 															<img src="{{asset('assets/images/team/6.png')}}" class="mr-3" alt="review1.png">
 															<div class="media-body">
-														    	<h4 class="sub_title mt-0">{{$courses->username}}
-																	<span class="sspd_review float-right">
+														    	<h4 class="sub_title mt-0">{{$comment->name}}
+																	<spafiles/images/teachers/1595059880.pngn class="sspd_review float-right">
 																		
 																	</span>										    		
 														    	</h4>
-														    	<a class="sspd_postdate fz14" href="#">6 months ago</a>
-														    	<p class="fz15 mt20">This is the second Photoshop course I have completed with Cristian. Worth every penny and recommend it highly. To get the most out of this course, its best to to take the Beginner to Advanced course first.</p>
-														    	<p class="fz15 mt25 mb25">The sound and video quality is of a good standard. Thank you Cristian.</p> 
+														    	<a class="sspd_postdate fz14" href="#">{{$comment->created_at->diffForHumans()}}</a>
+														    	<p class="fz15 mt20">{{$comment->content}}.</p>
+														    	<!-- <p class="fz15 mt25 mb25">The sound and video quality is of a good standard. Thank you Cristian.</p>  -->
 														    	
 															    
 															</div>
 														</div>					
 														
+													</div>
+													
+													@endforeach
+													
+													
+												</div>
+											</div>
+											<div class="cs_row_seven csv2">
+												<div class="sfeedbacks">
+												<div class="mbp_comment_form style2 pb0">
+														<h4>Fikr bildirish </h4>													
+														<form method="POST" action="{{route('comment')}}" class="comments_form">
+															@csrf													
+															<div class="form-group">
+															    <label for="exampleFormControlTextarea1">Fikr yoki taklif</label>
+																<input type="hidden" name="lesson_id" value="{{$video->id}}">
+																<input type="hidden" name="user_id" value="1">
+																<input type="hidden" name="name" value="Akrom">
+																
+																	
+																													
+															    <textarea name="content" placeholder="Fikr yoki taklif" class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+															
+															</div>
+															<button type="submit" class="btn btn-thm">Jo'natish<span class="flaticon-right-arrow-1"></span></button>
+															
+														</form>
 													</div>
 												</div>
 											</div>
@@ -135,9 +116,9 @@
                 	<div class="cs_row_three csv2">
                                             <div id="scroll" class="course_content">
                                                 <div class="cc_headers">
-                                                    Darslar
-                                                </div>
-                                                <br>
+                                                Darslar 
+												</div>
+												<hr>															
                                                 @foreach($courses->sections as $section)
                                                 <div class="details">
                                                     <div id="accordion" class="panel-group cc_tab">
@@ -149,18 +130,20 @@
                                                                     </a>
                                                                 </h4>
                                                             </div>
-                                                            <div id="panelBodyCourse{{$section->id}}" class="panel-collapse collapse">
+															
+                                                            <div id="panelBodyCourse{{$section->id}}" class="panel-collapse collapse @php if($video->section_id==$section->id) echo 'show'; @endphp">
                                                                 <div class="panel-body">
                                                                     <ul class="cs_list mb0">
-                                                                        @foreach($lessons as $lesson)
-                                                                        @if($section->id==$lesson->section_id)									
-                                                                            <li class="">
-                                                                            <a href="">
+																	
+																		@foreach($section->lessons as $lesson)																								
+                                                                            <li class="@php if(route('action', [$courses, $lesson->slug])==	Request::url()){echo"active";}@endphp">
+																			
+                                                                            <a href="{{ route('action', [$courses, $lesson->slug]) }}">
                                                                                     <span class="flaticon-play-button-1 icon"></span>{{$lesson->name}}
                                                                                     
                                                                                 </a>
                                                                             </li>
-                                                                        @endif									  								
+                                                                       						  								
                                                                         @endforeach									        		
                                                                     </ul>
                                                                 </div>
@@ -172,9 +155,13 @@
 			
                                                 </div>
                                             </div>
-                                        </div>  
+											@include('layouts.course_tags')
+											
+                                        </div> 
+										 
 					
 				</div>
+				
 			</div>
 		</div>
 	</section>

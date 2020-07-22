@@ -14,12 +14,21 @@ class Lesson extends Model
         'video',
         'section_id',
     ];
-    public function CourseSection()
+    // public function <section></section>()
+    // {
+    //     return $this->belongsTo('App\CourseSection');
+    // }
+    
+    public function comments()
     {
-        return $this->belongsTo('App\CourseSection');
+        return $this->hasMany('App\Comment');
     }
-    public function courses()
+    public function section()
     {
-        return $this->belongsTo('App\Course');
+        return $this->belonsTo('App\Section');
     }
+    // public function getRouteName()
+    // {
+    //     return 'slug';
+    // }
 }

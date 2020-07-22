@@ -55,7 +55,7 @@
             </div>
 
             <div class="message" style="padding: 10px;">
-                @yield('message')
+                @yield('message') <h4><a href="{{URL::previous() }}">Orqaga qaytish</a></h4>
             </div>
         </div>
     </body>

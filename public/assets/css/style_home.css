@@ -983,9 +983,9 @@ header.header-nav.menu_style_home_six.navbar-scrolltofixed.stricky.animated,
 header.header-nav.menu_style_home_seven.navbar-scrolltofixed.stricky.animated,
 header.header-nav.menu_style_home_eight.navbar-scrolltofixed.stricky.animated{
   -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  animation-duration: 0s;
   -webkit-animation-delay: 500ms;
-  animation-delay: 500ms;
+  animation-delay: 0ms;
 }
 header.header-nav.menu_style_home_one  a.navbar_brand{
   margin-top: 15px;

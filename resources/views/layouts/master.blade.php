@@ -2,11 +2,7 @@
 <html dir="ltr" lang="uz" class=" js no-touch csstransitions"><head>
 	@include('layouts.head')
 </head>
-<body   onmousedown='return true;' onselectstart='return false;'' style="background-color: #bebebe8f;">
-<script>
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});</script>
+<body style="background-color: #bebebe8f;">
 	<div class="wrapper mm-page mm-slideout" id="mm-0">
 			<div class="preloader" style="display: none;"></div>			
 			<!-- Inner Page Breadcrumb -->

@@ -18,7 +18,7 @@
 								<li><a href="{{route('home')}}">Bosh sahifa</a></li>
 								<li><a href="{{route('all_courses')}}">Kurslar</a></li>
 								<li><a href="{{route('quiz')}}">Onlayn Test</a></li>
-								<li><a href="{{route('news')}}">Yangiliklar</a></li>
+								<li><a href="{{route('blog')}}">Blog</a></li>
 								<li><a href="{{route('contact')}}">Biz bilan aloqa</a></li>
 							</ul>
 						</div>

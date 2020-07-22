@@ -984,9 +984,9 @@ header.header-nav.menu_style_home_six.navbar-scrolltofixed.stricky.animated,
 header.header-nav.menu_style_home_seven.navbar-scrolltofixed.stricky.animated,
 header.header-nav.menu_style_home_eight.navbar-scrolltofixed.stricky.animated{
   -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  animation-duration: 0s;
   -webkit-animation-delay: 500ms;
-  animation-delay: 500ms;
+  animation-delay: 0ms;
 }
 header.header-nav.menu_style_home_one  a.navbar_brand{
   margin-top: 15px;
@@ -6590,7 +6590,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 
 .mbp_pagination ul.page_navigation li.page-item:last-child .page-link:hover {
-  border: 2px solid #eeeeee;
+  border: 2pxborder solid #eeeeee;
   background-color: #eeeeee;
   border-radius: 22.5px;
   color: #4f4f4f;
@@ -7299,8 +7299,13 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 /*== Commenting Blog Sinlge Page ==*/
 .mbp_pagination_comments{
-  position: relative;
-  margin-top: 30px;
+  position: relative; 
+  border: 1px solid #cbcbcb;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #cbcbcba6;
+  color:#272727;
 }
 .mbp_pagination_comments .title{
   font-size: 20px;
@@ -7319,7 +7324,7 @@ ul.mc_parent_list ul.mc_child_list:hover .pricing_btn{
 }
 /*== Commenting Form Blog Sinlge Page ==*/
 .mbp_comment_form{
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 .mbp_comment_form h4{
   font-size: 20px;
@@ -11792,7 +11797,7 @@ body.translated{
   font-weight: 600;
   color: #0a0a0a;
   line-height: 1.2;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 .mbp_comment_form.style2 ul{
   margin-bottom: 20px;

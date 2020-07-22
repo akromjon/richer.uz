@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CourseCategory extends Model
 {
-   protected $table='course_category';
+   protected $table='course_categories';
    protected $fillable=[
        'name',
        'teacher_id_number',
@@ -14,8 +14,9 @@ class CourseCategory extends Model
    ];
    public function course()
    {
-       return $this->belongsTo('App\Course');
+       return $this->hasMany('App\Course');
    }
+   
    public function teacher()
    {
       return $this->belongsTo('App\Teacher');

@@ -15,33 +15,40 @@ use App\Course;
 */
 
 Route::namespace('admin')->get('/','UsersController@index')->name('home');
-Route::get('/single/{id}','course\CoursesController@single')->name('test');
+// Route::get('/single/{id}','course\CoursesController@single')->name('test');
+
 
 // using prefix for courses page
 	Route::namespace('course')->prefix('/courses')->group(function()
 		{
 
 		  Route::get('/','CoursesController@index')->name('all_courses');
+		  Route::post('/comment','CommentsController@store')->name('comment');
+			
 		  Route::prefix('/{course:slug}')->group(function()
 		  {
 			Route::get('/','CoursesController@view')->name('view');
 			Route::get('/{id}','CoursesController@single')->name('action');
+		
 
-			//Otabek shotta qilish kere {course:slug}/{lesson:slug}
-			
 			// Route::get('/lesson/{id}','CoursesController@view')->name('lesson');
 			// Route::get('/lesson/{id}','CourseController@lesson')->name('view_lesson');
-			// Route::get('lesson/{id}','CoursesController@lessonn')->name('lesson');
+			// Route::geourses/html/htmlt('lesson/{id}','CoursesController@lessonn')->name('lesson');
 
 		  });
 
 		});
 		
-// using prefix for news page
-	Route::namespace('news')->prefix('/news')->group(function()
+// using prefix for blog page
+	Route::namespace('blog')->prefix('/blog')->group(function()
 		{
-			Route::get('/','NewsController@index')->name('news');
-			Route::get('/view','NewsController@view')->name('news_view');
+			Route::post('/comment','BlogsController@comment')->name('comment_article');
+			Route::get('/','BlogsController@index')->name('blog');
+			Route::get('/{blog::slug}','BlogsController@view')->name('news_view');
+			Route::prefix('/category/{category::title}')->group(function(){
+				Route::get('/','BlogsController@category')->name('category_blog');
+				
+			});
 
 		});
 // using prefix for quizes page

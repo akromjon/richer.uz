@@ -23,6 +23,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.blog_right_navbar',function($view)
+        {
+            $view->with('articles',\App\Article::articles());
+         
+        });
+        view()->composer('layouts.blog_right_navbar',function($view)
+        {
+            $view->with('blog_categories',\App\Blog::blog_categories());
+         
+        });
     }
 }

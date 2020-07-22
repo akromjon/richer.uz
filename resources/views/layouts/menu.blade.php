@@ -23,7 +23,7 @@
 		                <a href="{{route('contact')}}"><span title="BIZ BILAN ALOQA QILISH" class="title"><i class="fa fa-list-alt" aria-hidden="true"></i> Biz bilan aloqa</span></a>
 		            </li>
 		            <li class="list_five">
-		                <a href="{{route('news')}}"><span title="YANGILIKLAR VA XABARLAR" class="title"><i class="fa fa-paper-plane" aria-hidden="true"></i> Yangiliklar</span></a>
+		                <a href="{{route('blog')}}"><span title="YANGILIKLAR VA XABARLAR" class="title"><i class="fa fa-paper-plane" aria-hidden="true"></i> Blog</span></a>
 		                <style type="text/css">
 
 		               .list_two:hover,.list_four:hover,.list_five:hover,.last:hover{

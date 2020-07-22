@@ -19,7 +19,7 @@
 											</li>
 											@foreach($course_categories as $course_category)
 											<li class="list-inline-item">
-												<a href="#{{$course_category->name}}" data-option-value=".{{$course_category->name}}">{{$course_category->name}} kursi</a>
+												<a href="#{{$course_category->id}}" data-option-value=".{{$course_category->id}}">{{$course_category->name}}</a>
 											</li>										
 											@endforeach
 										</ul>

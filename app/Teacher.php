@@ -22,9 +22,9 @@ class Teacher extends Model
    	'resume'   	
    ];
    
-   public function courses()
-   {
-	   $this->hasMany('App\Course');
-   }
+//    public function courses()
+//    {
+// 	   $this->hasMany('App\Course');
+//    }
     
 }

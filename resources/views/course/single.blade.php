@@ -4,9 +4,15 @@
     <title>{{$courses->name}}</title>
 </head>
 <body>	
+@include('layouts.mobile_menu')
 <div class="wrapper mm-page mm-slideout"  style="background-color: #cbcbcb;"  id="mm-0">
 	<!-- Inner Page Breadcrumb -->
+	@include('layouts.logo')
 	<section class="inner_page_breadcrumb" >
+	
+	<div class="wrapper mm-page mm-slideout" id="mm-0">
+		<div class="preloader" style="display: none;"></div>
+			
 	<!-- Main Header Nav -->
 	@include('layouts.sign_up')
 	@include('layouts.menu')			
@@ -23,29 +29,41 @@
 										<div class="courses_big_thumb">
 											<div class="thumb">
 												<!-- <iframe class="iframe_video" src="//www.youtube.com/embed/57LQI8DKwec" frameborder="0" allowfullscreen=""></iframe> -->
-												{!!$video->video!!}							
+												{!!$video->video!!}	
+																			
 											</div>
 										</div>
 									</div>
 								</div>								
-								<div class="cs_rwo_tabs csv2">
+								<div style="margin-bottom: 10px;" class="cs_rwo_tabs csv2">
 									<ul class="nav nav-tabs" id="myTab" role="tablist">
 										<!-- <li class="nav-item">
 										    <a class="nav-link active" id="course-tab" data-toggle="tab" href="#course" role="tab" aria-controls="course" aria-selected="false"><i class="fa fa-video-camera" aria-hidden="true"></i> Darslar</a>
-										</li>
+										</li> -->
 										<li class="nav-item">
-										    <a class="nav-link " id="Overview-tab" data-toggle="tab" href="#Overview" role="tab" aria-controls="Overview" aria-selected="true"><i class="fa fa-file-text" aria-hidden="true"></i>  Kurs </a>
-										</li>										 -->
+										    <a class="nav-link active" id="Overview-tab" data-toggle="tab" href="#Overview" role="tab" aria-controls="Overview" aria-selected="true"><i class="fa fa-file-text" aria-hidden="true"></i>  Kurs </a>
+										</li>										
 										<li class="nav-item">
-										    <a class="nav-link active" id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false"><i class="fa fa-user-circle" aria-hidden="true"></i> O'qituvchi</a>
+										    <a class="nav-link " id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false"><i class="fa fa-user-circle" aria-hidden="true"></i> O'qituvchi</a>
 										</li>
 										<li class="nav-item">
 										    <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false"> 
 										    <i class="fa fa-comments" aria-hidden="true"></i> {{$video->comments->count()}} fikrlar</a>
 										</li>
 									</ul>
-									<div style="margin-top:30px;" class="tab-content" id="myTabContent">										
-										<div class="tab-pane fade show active" id="instructor" role="tabpanel" aria-labelledby="review-tab">
+									<div style="margin-top:30px;" class="tab-content" id="myTabContent">
+									<div class="tab-pane fade show active" id="Overview" role="tabpanel" aria-labelledby="Overview-tab">
+											<div class="cs_row_two csv2">
+												<div class="cs_overview">
+													<h4 class="title">{{$video->name}}</h4>
+													<hr>
+													
+													<p class="mb30">{!!$video->content!!} </p>
+												
+												</div>
+											</div>
+										</div>										
+										<div class="tab-pane fade show" id="instructor" role="tabpanel" aria-labelledby="review-tab">
 											@include('layouts.teacher')
 										</div>
 										<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">																					
@@ -53,6 +71,8 @@
 											<div class="sfeedbacks">
 											
 													@foreach($video->comments as $comment)
+													@if($comment->confirm==1)
+													
 													
 													<div class="mbp_pagination_comments">
 														<div class="mbp_first media csv1">
@@ -72,6 +92,7 @@
 														</div>					
 														
 													</div>
+													@endif
 													
 													@endforeach
 													
@@ -116,7 +137,7 @@
                 	<div class="cs_row_three csv2">
                                             <div id="scroll" class="course_content">
                                                 <div class="cc_headers">
-                                                Darslar 
+                                                Darslar: {{$courses->sections->count()}}
 												</div>
 												<hr>															
                                                 @foreach($courses->sections as $section)
@@ -133,18 +154,23 @@
 															
                                                             <div id="panelBodyCourse{{$section->id}}" class="panel-collapse collapse @php if($video->section_id==$section->id) echo 'show'; @endphp">
                                                                 <div class="panel-body">
-                                                                    <ul class="cs_list mb0">
-																	
+                                                                    <ul class="cs_list mb0">																	
 																		@foreach($section->lessons as $lesson)																								
-                                                                            <li class="@php if(route('action', [$courses, $lesson->slug])==	Request::url()){echo"active";}@endphp">
-																			
+                                                                            <li class="@php if(route('action', [$courses, $lesson->slug])==Request::url()){echo"active";}@endphp">																			
                                                                             <a href="{{ route('action', [$courses, $lesson->slug]) }}">
-                                                                                    <span class="flaticon-play-button-1 icon"></span>{{$lesson->name}}
-                                                                                    
+																					<i class="fa fa-play" aria-hidden="true"></i> {{$lesson->name}}
+																					<span class="cs_time">{{$lesson->duration}}:00 min</span>                                                                                 
                                                                                 </a>
-                                                                            </li>
-                                                                       						  								
-                                                                        @endforeach									        		
+                                                                            </li>                                                                       						  								
+                                                                        @endforeach
+																		@foreach($section->quizes as $quiz)																								
+                                                                            <li class="@php if(route('quiz_view', [$courses, $quiz->slug])==Request::url()){echo"active";}@endphp">																			
+                                                                            <a href="{{ route('quiz_view', [$courses, $quiz->slug]) }}">
+																					<i class="fa fa-question-circle-o" aria-hidden="true"></i> {{$quiz->name}}
+																					<span class="cs_time">{{$quiz->questions->count()}}ta testlar</span>                                                                              
+                                                                                </a>
+                                                                            </li>                                                                       						  								
+                                                                        @endforeach										        		
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -155,7 +181,7 @@
 			
                                                 </div>
                                             </div>
-											@include('layouts.course_tags')
+										@include('layouts.course_tags')
 											
                                         </div> 
 										 

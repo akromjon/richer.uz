@@ -28,7 +28,7 @@
 											<li><a href="#"><span class="flaticon-chat"></span></a></li>
 											<li><a href="{{route('news_view',$article->slug)}}"><span> <i class="fa fa-commenting-o" aria-hidden="true"> {{$article->comments->count()}}</i> fikrlar</span></a></li>
 										</ul>
-										<p>{{$article->content}}</p>
+										<p>{{ Illuminate\Support\Str::limit($article->content, 310) }}</p>
 									</div>
 
 								</div>

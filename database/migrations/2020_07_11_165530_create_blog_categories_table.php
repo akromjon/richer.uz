@@ -19,7 +19,7 @@ class CreateBlogCategoriesTable extends Migration
             $table->string('icon'); // this can be html tags
             $table->string('slug')->unique();
             $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');                         
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');                         
             $table->timestamps();
         });
     }

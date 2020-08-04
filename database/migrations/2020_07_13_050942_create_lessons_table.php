@@ -17,12 +17,13 @@ class CreateLessonsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
+            $table->longText('content'); // this is not migrated yet
             $table->integer('duration');
             $table->string('video');
             $table->bigInteger('section_id')->unsigned()->nullable();
             $table->bigInteger('course_id')->unsigned()->nullable();
-            $table->foreign('course_id')->references('id')->on('courses'); 
-            $table->foreign('section_id')->references('id')->on('sections');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade'); 
+            $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->timestamps();
         });
     }

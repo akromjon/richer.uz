@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use App\Course;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -33,5 +34,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('blog_categories',\App\Blog::blog_categories());
          
         });
+      
     }
 }

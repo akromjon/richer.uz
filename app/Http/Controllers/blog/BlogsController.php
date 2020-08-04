@@ -11,10 +11,11 @@ use Illuminate\Http\Request;
 
 class BlogsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {   
         //this is for user page       
-        $articles=Article::all();        
+        $articles=Article::orderBy('id', 'DESC')->skip(0)
+        ->take(8)->get();
         return view('blog.index',compact('articles'));
     }
     public function view($slug)

@@ -15,8 +15,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="HandheldFriendly" content="true">
 	<style type="text/css">
+	
 	.list_two:hover,.list_four:hover,.list_five:hover,.last:hover
 	{
-	text-decoration: underline;
+	text-decoration: none;
 	}
 	</style>
+	

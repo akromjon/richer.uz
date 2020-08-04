@@ -29,9 +29,18 @@
 									 @foreach($section->lessons as $lesson)															
 										<li class="">										
 										<a href="{{ route('action', [$courses, $lesson->slug]) }}">
-												<span class="flaticon-play-button-1 icon"></span>{{$lesson->name}}
-												<span class="cs_time">01:53</span> 
-												<span class="cs_preiew">Ko'rish</span>
+										<i class="fa fa-play" aria-hidden="true"></i> {{$lesson->name}}
+												<span class="cs_time">{{$lesson->duration}}:00 min</span> 
+												<span class="cs_preiew">Boshlash</span>
+											</a>
+										</li>												  								
+									@endforeach
+									@foreach($section->quizes as $quiz)															
+										<li class="">										
+										<a href="{{ route('quiz_view', [$courses, $quiz->slug]) }}">
+										<i class="fa fa-question-circle-o" aria-hidden="true"></i> {{$quiz->name}}
+										<span class="cs_time">{{$quiz->questions->count()}}ta testlar</span> 
+												<span class="cs_preiew">Boshlash</span>												
 											</a>
 										</li>												  								
 									@endforeach									        		

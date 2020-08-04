@@ -14,7 +14,7 @@
 		        <a href="{{route('home')}}" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid" src="{{asset('assets/images/header-logo.png')}}" alt="header-logo.png">
 		            <img class="logo2 img-fluid" src="{{asset('assets/images/header-logo2.png')}}" alt="header-logo2.png">
-		            <span style="text-transform:lowercase;">richer.uz</span>
+		            <span>richer.uz</span>
 		        </a>
 		        <!-- Responsive Menu Structure-->
 		        <!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->	
@@ -24,17 +24,14 @@
 		            </li>
 		            <li class="list_five">
 		                <a href="{{route('blog')}}"><span title="YANGILIKLAR VA XABARLAR" class="title"><i class="fa fa-paper-plane" aria-hidden="true"></i> Blog</span></a>
-		                <style type="text/css">
-
-		               .list_two:hover,.list_four:hover,.list_five:hover,.last:hover{
-		                    	text-decoration: underline;
-		                }
-		                </style>
-		            </li>
-		            <li class="list_four">
-		                <a href="{{route('quiz')}}"><span title="ONLAYN TEST TOPSHIRISH" class="title">
-		                	<i class="fa fa-check-square-o" aria-hidden="true"></i>onlayn Test</span></a>		                
-		            </li>		            
+		                
+					</li>
+					<?php
+		            // <li class="list_four">
+		            //     <a href=""><span title="ONLAYN TEST TOPSHIRISH" class="title">
+		            //     	<i class="fa fa-check-square-o" aria-hidden="true"></i>onlayn Test</span></a>		                
+					// </li>
+					?>		            
 		            <li class="list_two">
 		                <a href="{{route('all_courses')}}">
 		                	<span title="BARCHA KURSLAR" class="title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Kurslar</span>
@@ -43,4 +40,4 @@
 		        </ul>
 		    </nav>	    
 		</div>
-		</header>
+</header>

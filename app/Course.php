@@ -22,7 +22,8 @@ class Course extends Model
    		'level',
    		'duration',
    		'enrolled_student',
-   		'confirm'
+		'confirm',
+		'visit_count'
    ];
 //    public function getRouteName()
 //    {
@@ -49,6 +50,10 @@ class Course extends Model
 	public function comments()
 	{
 		return $this->hasMany('App\Comment');
+	}
+	public function quizes()
+	{
+		return $this->hasMany(Quiz::class);
 	}
 
 	

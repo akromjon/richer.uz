@@ -26,11 +26,12 @@ class CreateCommentsTable extends Migration
             $table->boolean('confirm')->default(1);
             $table->string('browser')->nullable();
             $table->string('ip_address')->nullable();
-            $table->string('device_type')->nullable();            
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('course_id')->references('id')->on('courses');     
-            $table->foreign('lesson_id')->references('id')->on('lessons');
-            $table->foreign('article_id')->references('id')->on('articles');
+            $table->string('device_type')->nullable(); 
+            $table->string('operation_system')->nullable();            
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');     
+            $table->foreign('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->timestamps();
             // this is not migrated yet
         });

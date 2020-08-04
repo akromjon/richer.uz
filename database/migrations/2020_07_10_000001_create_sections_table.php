@@ -21,10 +21,10 @@ class CreateSectionsTable extends Migration
             $table->bigInteger('category_id')->unsigned()->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->string('show')->nullable();// this is not migrated yet ///////////////////////////////////////
-            $table->foreign('course_id')->references('id')->on('courses'); 
-            $table->foreign('teacher_id')->references('id')->on('teachers'); 
-            $table->foreign('category_id')->references('id')->on('course_categories'); 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade'); 
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade'); 
+            $table->foreign('category_id')->references('id')->on('course_categories')->onDelete('cascade'); 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
         

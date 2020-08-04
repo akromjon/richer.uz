@@ -10,6 +10,7 @@ class Lesson extends Model
     protected $fillabe=[
         'name',
         'slug',
+        'content',
         'duration',
         'video',
         'section_id',

@@ -28,10 +28,11 @@ class CreateCoursesTable extends Migration
             $table->integer('quiz');
             $table->string('language'); // it can be uzbek or russian or english
             $table->string('level'); // it can be beginner, elementary, intermediate
-            $table->integer('duration'); // this is the duration of whole course
-            $table->boolean('confirm')->default(0);                       
-            $table->foreign('teacher_id')->references('id')->on('teachers');            
-            $table->foreign('course_categories_id')->references('id')->on('course_categories');   
+            $table->integer ('duration'); // this is the duration of whole course
+            $table->boolean('confirm')->default(0);
+                                 
+            $table->foreign('teacher_id')->references('id')->on('teachers')->onDelete('cascade');            
+            $table->foreign('course_categories_id')->references('id')->on('course_categories')->onDelete('cascade');   
             $table->timestamps();
             // $table->integer('enrolled_students');   
              //$table->char('teacher_username',100)->nullable();        

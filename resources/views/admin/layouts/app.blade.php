@@ -91,9 +91,12 @@
                     </div>
                     <div class="list-group">
                            
-                           <a  class="list-group-item list-group-item-action "  style="text-align:center; color:black;" >Courses</a>                           
+                           <a  class="list-group-item list-group-item-action "  style="text-align:center; color:black;" >Courses</a>                             
                            <a  class="list-group-item list-group-item-action " href="{{route('view_course_categories_add')}}">add a course category</a>
                            <a  class="list-group-item list-group-item-action " href="{{route('view_course_categories')}}">all course categories</a>
+                           <a  class="list-group-item list-group-item-action " href="{{route('create_course_section')}}">create a section</a>
+                           <a  class="list-group-item list-group-item-action " href="{{route('create_course_lesson')}}"><i class="fa fa-plus" aria-hidden="true"></i> create a lesson</a>
+                           <a  class="list-group-item list-group-item-action " href="{{route('all_lessons')}}">all lessons</a>
                            <a  class="list-group-item list-group-item-action " href="#">add a course</a>
                            <a  class="list-group-item list-group-item-action " href="{{route('view_courses')}}">all courses</a>                           
                            <a  class="list-group-item list-group-item-action " href="#">Comments</a>

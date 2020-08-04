@@ -24,8 +24,8 @@ class CreateArticlesTable extends Migration
             $table->string('tags')->nullable();
             $table->char('writer',100)->nullable();
             $table->string('rescourse')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('blog_id')->references('id')->on('blog_categories');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('blog_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

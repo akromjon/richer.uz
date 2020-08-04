@@ -17,7 +17,8 @@ class Comment extends Model
         'lesson_id',
         'browser',
         'ip_address',
-        'device_type'      
+        'device_type',  
+        'operation_system'
 
     ];
     public function lessons()
@@ -25,5 +26,9 @@ class Comment extends Model
         return $this->belongsTo('App\Lesson');
     }
     
+    public function quizes()
+    {
+        return $this->belongsTo('App\Lesson');
+    }
 
 }

@@ -11,38 +11,45 @@ use App\Section;
 use App\Lesson;
 use App\Comment;
 use App\User;
+use App\Quiz;
 
 
 
 class CoursesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {   
         $course_categories=CourseCategory::all();
         $courses=Course::all();           
         return view('course.all_courses',compact('courses','course_categories'));
     }
     public function view($slug)
-    {         
-        $courses=Course::where('slug','=',$slug)->firstOrFail();              
-        return view('course.single_course',compact('courses'));
-    }
-    
-    public function single($id,$title)
-    {                
-        // $courses=Course::first();
-        // $all_sections=Section::all();
-        // $courses=Course::where('slug','=',$slug)->firstOrFail();
-        $courses=Course::where('slug','=',$id)->firstOrFail();
-        $video=Lesson::where('slug','=',$title)->firstOrFail();    
-        if($video->course_id==$courses->id)
-        {}
+    { 
+              
+        $courses=Course::where('slug','=',$slug)->firstOrFail(); 
+        if($courses->confirm==1)
+        {
+            
+        }
         else
         {
           return redirect('/404');
-        }
-        return view('course.single',compact('video','courses'));
+        }              
+        return view('course.single_course',compact('courses'));
     }
+    public function update(Request $request, $id)
+    {
+        $course=Course::find($id);
+        $course->visit_count=$request->input('visitCount');
+        $course->save();
+        
+
+    }
+    
+   
+   
+
+    
     
 
     

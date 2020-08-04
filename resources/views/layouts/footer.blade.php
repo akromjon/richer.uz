@@ -1,3 +1,67 @@
+<?php					
+// <section class="school-category-courses pt30">
+// 		<div class="container">
+// 			<div class="row">
+// 				<div class="col-lg-6 offset-lg-3">
+// 					<div class="main-title text-center">
+// 						<h3 class="mt0">Yangi Bloglar</h3>
+// 						<p>Qaynoq xabarlarni biz bilan o'qing!</p>
+// 					</div>
+// 				</div>
+// 			</div>
+			
+// 			<div class="row">
+// 				<div class="col-sm-6 col-lg-3">
+// 					<div class="img_hvr_box home3" style="background-image: url({{asset('assets/images/courses/1.jpg')}});">
+// 						<div class="overlay">
+// 							<div class="details">
+// 								<h5>Universitetlar</h5>
+// 								<p>Qaynoq xabarlarni biz bilan o'qing Qaynoq xabarlarni biz bilan o'qing</p>
+// 							</div>
+// 						</div>
+// 					</div>
+// 				</div>
+// 				<div class="col-sm-6 col-lg-3">
+// 					<div class="img_hvr_box home3" style="background-image: url({{asset('assets/images/courses/1.jpg')}});">
+// 						<div class="overlay">
+// 							<div class="details">
+// 								<h5>Universitetlar</h5>
+// 								<p>Qaynoq xabarlarni biz bilan o'qing Qaynoq xabarlarni biz bilan o'qing</p>
+// 							</div>
+// 						</div>
+// 					</div>
+// 				</div>	<div class="col-sm-6 col-lg-3">
+// 					<div class="img_hvr_box home3" style="background-image: url({{asset('assets/images/courses/1.jpg')}});">
+// 						<div class="overlay">
+// 							<div class="details">
+// 								<h5>Universitetlar</h5>
+// 								<p>Qaynoq xabarlarni biz bilan o'qing Qaynoq xabarlarni biz bilan o'qing</p>
+// 							</div>
+// 						</div>
+// 					</div>
+// 				</div>	<div class="col-sm-6 col-lg-3">
+// 					<div class="img_hvr_box home3" style="background-image: url({{asset('assets/images/courses/1.jpg')}});">
+// 						<div class="overlay">
+// 							<div class="details">
+// 								<h5>Universitetlar</h5>
+// 								<p>Qaynoq xabarlarni biz bilan o'qing Qaynoq xabarlarni biz bilan o'qing</p>
+// 							</div>
+// 						</div>
+// 					</div>
+// 				</div>
+// 				<div class="col-lg-6 offset-lg-3">
+// 					<div class="courses_all_btn home3 text-center">
+// 						<a class="btn btn-transparent" href="#">View All Courses</a>
+// 					</div>
+// 				</div>
+// 			</div>
+// 		</div>
+// 	</section>
+	?>
+	
+	
+	
+	
 <section class="footer_one">
 			<div class="container">
 				<div class="row center">
@@ -16,8 +80,7 @@
 							<h4>Saxifalar</h4>
 							<ul class="list-unstyled">
 								<li><a href="{{route('home')}}">Bosh sahifa</a></li>
-								<li><a href="{{route('all_courses')}}">Kurslar</a></li>
-								<li><a href="{{route('quiz')}}">Onlayn Test</a></li>
+								<li><a href="{{route('all_courses')}}">Kurslar</a></li>								
 								<li><a href="{{route('blog')}}">Blog</a></li>
 								<li><a href="{{route('contact')}}">Biz bilan aloqa</a></li>
 							</ul>
@@ -79,3 +142,4 @@
 		<script type="text/javascript" src="{{asset('assets/js/timepicker.js')}}"></script>
 		<!-- Custom script for all pages --> 
 		<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
+	

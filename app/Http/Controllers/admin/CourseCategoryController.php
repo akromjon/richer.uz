@@ -19,4 +19,5 @@ class CourseCategoryController extends Controller
     {
       return view('admin.layouts.app');
     }
+    
 }

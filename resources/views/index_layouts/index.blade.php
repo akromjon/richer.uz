@@ -10,6 +10,7 @@
 	<!-- css file -->
 	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="{{asset('assets/css/style_home.css')}}">
+	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- particles stylesheet and scripts -->
 	<link href="favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon">
@@ -28,16 +29,29 @@
 	
 </head>
 
-<body onmousedown='return true;' onselectstart='return false;'>
-<script>
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
-});</script>
-	<div class="wrapper mm-page mm-slideout" id="mm-0">
-		<div class="preloader" style="display: none;"></div>
+<body>
+<nav id="menu" class="stylehome1 mm-menu mm-menu_offcanvas" aria-hidden="true"><div class="mm-panels"><div id="mm-1" class="mm-panel mm-panel_has-navbar mm-panel_opened"><div class="mm-navbar"><a class="mm-navbar__title">Menu</a></div><ul class="mm-listview">
+				
+				<li class="mm-listitem"><a href="{{route('all_courses')}}" class="mm-listitem__text">Kurslar</a>
+					
+				</li>
+				<li class="mm-listitem"><a href="{{route('blog')}}" class="mm-listitem__text">Blog</a>
+					
+				</li>
+				<li class="mm-listitem"><a href="{{route('contact')}}" class="mm-listitem__text">Biz bilan aloqa</a></li>
+				<li class="mm-listitem"><a href="{{route('login')}}" class="mm-listitem__text"><span class="flaticon-user"></span> Kirish</a></li>
+				<li class="mm-listitem"><a href="{{route('register')}}" class="mm-listitem__text"><span class="flaticon-edit"></span> Ro'yhatdan o'tish</a></li>
+				
+			</ul></div></div>
+			
+		</nav>
+
+
+		@include('layouts.logo')	
 		@include('layouts.sign_up')
 		@include('layouts.menu')	
 		<!-- Home Design -->
+	
 		<section class="home-three home3-overlay home3_bgi6">
 		<div  id="particles-js"></div>
 		<!-- scripts -->
@@ -61,6 +75,7 @@ document.addEventListener('contextmenu', function(e) {
 		<!--this is the content of home page-->
 		@yield('content')		
 		<!-- Our Footer -->
-		@include('layouts.footer')
+		@include('layouts.footer')	
+		
 </body>
 </html>

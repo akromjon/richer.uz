@@ -21,6 +21,10 @@ class Section extends Model
     {
         return $this->hasMany(Lesson::class);
     }
+    public function quizes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
     // public function sections()
     // {
     //     return $this->belongsTo('App\Course');

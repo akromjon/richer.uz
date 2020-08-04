@@ -24,9 +24,15 @@ class SectionCourseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function test($id,$title)
+    {                
+        // $courses=Course::first();
+        // $all_sections=Section::all();
+        // $courses=Course::where('id','=',$slug)->firstOrFail();
+        $courses=Course::where('slug','=',$id)->first();
+        $quiz=Quiz::where('slug','=',$title)->first();
+        
+        return view('course.quiz',compact('quiz','courses'));
     }
 
     /**

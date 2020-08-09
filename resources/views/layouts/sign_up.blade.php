@@ -10,10 +10,16 @@
 			        <ul class="sign_up_btn pull-right dn-smd mt15 home3">		               
 		                <li class="list-inline-item">
 							<a href="{{route('login')}}" class="btn btn-md" data-toggle="modal" >
-								<i class="flaticon-user"></i> 
-									<span class="dn-md">Kirish</span>
+								
+								<i class="fa fa-sign-in" aria-hidden="true"></i>
+									<span class="dn-md">Kirish </span>
 							</a>
-							<a href="{{route('register')}}" class="btn btn-md" data-toggle="modal"><i class="fa fa-registered" aria-hidden="true"></i></i><span class="dn-md">Ro'yhatdan O'tish</span></a>
+							<a href="{{route('user_main')}}" class="btn btn-md" data-toggle="modal" >
+							<i class="flaticon-user"></i>
+									<span class="dn-md">Profil </span>
+							</a>
+							
+							<a href="{{route('register')}}" class="btn btn-md" data-toggle="modal"><i class="fa fa-user-plus" aria-hidden="true"></i><span class="dn-md">Ro'yhatdan O'tish</span></a>
 						</li>
 						<li class="list-inline-item">		                	
 						</li>

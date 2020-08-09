@@ -17,7 +17,7 @@ class UsersController extends Controller
     public function index()
     {
         $courses=Course::all();
-        $articles=Article::orderBy('id', 'DESC')->skip(0)->take(3)->get();
+        $articles=Article::orderBy('id', 'DESC')->get();
         $course_categories=CourseCategory::all();
         return view('index.index',compact('courses','course_categories','articles'));
     }

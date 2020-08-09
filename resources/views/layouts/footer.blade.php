@@ -115,8 +115,6 @@
 				</div>
 			</div>
 </section>
-<!-- Our Footer Middle Area -->
-<!-- Our Footer Bottom Area -->	
 <a class="scrollToHome home3" href="index.html#">
 			<i class="flaticon-up-arrow-1"></i> tepaga
 		</a>
@@ -131,6 +129,7 @@
 		<script type="text/javascript" src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/isotop.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/snackbar.min.js')}}"></script>
+		<script type="text/javascript" src="{{asset('assets/js/zxcvbnm.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/simplebar.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/parallax.js')}}"></script>
 		<script type="text/javascript" src="{{asset('assets/js/scrollto.js')}}"></script>
@@ -142,4 +141,6 @@
 		<script type="text/javascript" src="{{asset('assets/js/timepicker.js')}}"></script>
 		<!-- Custom script for all pages --> 
 		<script type="text/javascript" src="{{asset('assets/js/script.js')}}"></script>
+		
+		
 	

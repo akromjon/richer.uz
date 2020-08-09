@@ -26,5 +26,17 @@ class Teacher extends Model
 //    {
 // 	   $this->hasMany('App\Course');
 //    }
+	public function CourseCategories()
+	{
+		return $this->hasMany('App\CourseCategory');
+	}
+	public function courses()
+	{
+		return $this->hasMany('App\Course');
+	}
+	public function sections()
+	{
+		return $this->hasMany('App\Section');
+	}
     
 }

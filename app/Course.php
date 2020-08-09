@@ -6,33 +6,33 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-    //
+	//
 
-   protected $table='courses';
-   protected $fillable=[
-   		'name',
-	   	'information',
+	protected $table = 'courses';
+	protected $fillable = [
+		'name',
+		'image',
+		'information',
 		'teacher_id',
 		'category_id',
-   		'cost',
-   		'section',
-   		'videos',
-   		'quiz',
-   		'language',
-   		'level',
-   		'duration',
-   		'enrolled_student',
+		'cost',		
+		'language',
+		'level',
+		'duration',
+		'enrolled_student',
 		'confirm',
+		'meta_description',
+		'meta_keywords',
 		'visit_count'
-   ];
-//    public function getRouteName()
-//    {
-// 	   return 'slug';
-//    }
+	];
+	//    public function getRouteName()
+	//    {
+	// 	   return 'slug';
+	//    }
 
-   public function teacher()
-   	{
-        return $this->belongsTo('App\Teacher');
+	public function teacher()
+	{
+		return $this->belongsTo('App\Teacher');
 	}
 
 	public function sections()
@@ -55,7 +55,4 @@ class Course extends Model
 	{
 		return $this->hasMany(Quiz::class);
 	}
-
-	
-	
 }

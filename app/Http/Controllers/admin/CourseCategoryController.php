@@ -4,20 +4,50 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Teacher;
+use App\CourseCategory;
+
 
 class CourseCategoryController extends Controller
 {
-    public function teacher()
-    {
-      return view('admin.teachers.create');  
+    public function index()
+    {   
+        $teachers=Teacher::all();
+        return view('admin_system.course_category.index',compact('teachers'));
+    }    
+    public function add()
+    {   
+        $teachers=Teacher::all();
+        return view('admin_system.course_category.create',compact('teachers'));
     }
-    public function all()
+    public function create(Request $request)
     {
-        return view('admin.teachers.index');
+        $category=new CourseCategory;
+        $category->name=$request['name'];
+        $category->teacher_id=$request['teacher_id'];
+        $category->save();
+        return back();
     }
-    public function home()
+    public function edit($id)
+    {   
+        $teachers=Teacher::all();
+        $category=CourseCategory::findOrFail($id);
+        return view('admin_system.course_category.edit',compact('category','teachers'));
+    }
+    public function update(Request $request,$id)
     {
-      return view('admin.layouts.app');
+        $category=CourseCategory::findOrFail($id);
+        $category->name=$request['name'];
+        $category->teacher_id=$request['teacher_id'];
+        $category->save();
+        return back();
     }
-    
+    public function destroy($id)
+    {
+      $lesson=CourseCategory::findOrFail($id);      
+      $lesson->delete();
+      return back();
+
+    }
+   
 }

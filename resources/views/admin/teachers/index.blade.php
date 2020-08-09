@@ -8,15 +8,11 @@
             <a href="{{route('add_teacher')}}" class="btn btn-info float-right">Add a Teacher</a>
         </div>       
         
-        
-        
-        beginner
-        
     </div>
     
        <div class="card-body p-0 ">
         
-        <p class="card-text m-3 text-center">No teachers yet</p>
+        
         <div class="form-group">
                   <label for="tags_id">Selects Teachers by Username</label>
                   <select class="form-control" id="tags_id" name="tags_id" multiple>

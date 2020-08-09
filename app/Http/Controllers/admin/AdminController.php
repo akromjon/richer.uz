@@ -15,6 +15,15 @@ use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
+  public function index()
+  {
+    return view('admin_system.dashboard');
+  }
+
+
+
+
+    
     public function teacher()
     {
       return view('admin.teachers.create');  

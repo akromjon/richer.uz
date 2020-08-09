@@ -11,4 +11,12 @@ class UsersController extends Controller
     {
         return view('user.index');
     }
+    public function mycourses()
+    {
+        return view('user.my_courses');
+    }
+    public function chat()
+    {
+        return view('user.chat');
+    }
 }

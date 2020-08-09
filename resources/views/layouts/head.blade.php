@@ -1,24 +1,17 @@
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<!-- css file -->
-	<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-	<link rel="stylesheet" href="{{asset('assets/css/login_style.css')}}">
-	<!-- Responsive stylesheet -->
-	<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-	<!-- Title --><!-- 
-	<title>Onlayn Kurs</title> -->
-	<!-- Favicon -->
-	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon">
-	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="HandheldFriendly" content="true">
-	<style type="text/css">
-	
-	.list_two:hover,.list_four:hover,.list_five:hover,.last:hover
-	{
-	text-decoration: none;
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<meta name="author" content="Richer uz">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/main_style.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+
+<meta name="HandheldFriendly" content="true">
+<style type="text/css">
+	.list_two:hover,
+	.list_four:hover,
+	.list_five:hover,
+	.last:hover {
+		text-decoration: none;
 	}
-	</style>
-	
+</style>

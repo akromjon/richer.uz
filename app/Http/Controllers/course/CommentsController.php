@@ -2,15 +2,10 @@
 
 namespace App\Http\Controllers\course;
 use App\Http\Controllers\Controller;
-
-namespace App\Http\Controllers\course;
-use App\Http\Controllers\Controller;
 use App\Helpers\UserInfoHelper;
 
 use Illuminate\Http\Request;
 use App\Course;
-use App\User;
-use App\Lesson;
 use App\Comment;
 use App\Quiz;
 
@@ -21,7 +16,7 @@ class CommentsController extends Controller
 {
     public function store(Request $request)
     { 
-        $this->validate(request(),['content'=>'required|min:3']);
+      
         $comment=new Comment;
         $comment->name=$request['name'];
         $comment->user_id=$request['user_id'];

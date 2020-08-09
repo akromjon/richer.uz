@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Section;
+use App\Course;
+use App\Quiz;
 
 class SectionCourseController extends Controller
 {

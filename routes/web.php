@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Course;
+use App\CourseCategory;
+use App\Http\Controllers\admin\CourseCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,8 +74,8 @@ Route::namespace('admin')->prefix('/admin')->group(function()
 {
 	// this routes for teacher
 	Route::get('/teacher/add','TeacherController@teacher')->name('teacher');
-	Route::get('/teacher/view','TeacherController@view')->name('view_teacher');
-	Route::post('/teacher/add','TeacherController@add')->name('add_teacher');
+	
+	
 
 	// this route is for home of admin system
 	Route::get('/dashboard','TeacherController@home')->name('dashboard');
@@ -100,12 +102,85 @@ Route::namespace('admin')->prefix('/admin')->group(function()
 }
 );
 
+Route::namespace('admin')->prefix('/admin_system')->group(function()
+{
+			Route::get('/','AdminController@index')->name('main_dashboard');			
+			///*******************************************///
+			///************teacher settings*******************///
+			Route::prefix('/teacher')->group(function()
+			{		
+				Route::get('/', 'TeacherController@add')->name('add_teacher');
+				Route::get('/index', 'TeacherController@index')->name('all_teachers');
+				Route::post('/create','TeacherController@create')->name('create_teacher');
+				Route::get('/{id}', 'TeacherController@edit')->name('edit_teacher');
+				Route::post('/{id}/update', 'TeacherController@update')->name('update_teacher');
+				Route::delete('/{id}/delete','TeacherController@destroy')->name('delete_teacher');				
+			});
+			///*******************************************///
+			///*******************************************///
+			Route::prefix('/course-category')->group(function()
+			{
+				Route::get('/','CourseCategoryController@add')->name('add_category');
+				Route::get('/index','CourseCategoryController@index')->name('all_categories');
+				Route::post('/create','CourseCategoryController@create')->name('create_category');
+				Route::get('/{id}','CourseCategoryController@edit')->name('edit_category');
+				Route::post('/{id}/update','CourseCategoryController@update')->name('update_category');
+				Route::delete('/{id}/delete','CourseCategoryController@destroy')->name('delete_category');
+			});
+			//************************************/
+			//************************************/
+			Route::prefix('/courses')->group(function()
+			{
+				Route::get('/','CoursesController@add')->name('add_course');
+				Route::get('/index','CoursesController@index')->name('all_courses_admin');
+				Route::post('/create','CoursesController@create')->name('create_course');
+				Route::get('/{id}','CoursesController@edit')->name('edit_course');
+				Route::post('/{id}/update','CoursesController@update')->name('update_course');
+				Route::delete('/{id}/delete','CoursesController@destroy')->name('delete_course');
+				
+			});
+			/***********************************/
+			/**********************************/
+			Route::prefix('/sections')->group(function()
+			{
+				Route::get('/','SectionsController@add')->name('add_section');
+				Route::get('/index','SectionsController@index')->name('all_sections');
+				Route::post('/create','SectionsController@create')->name('create_section');
+				Route::get('/{id}','SectionsController@edit')->name('edit_section');				
+				Route::post('/{id}/update','SectionsController@update')->name('update_section');
+				Route::delete('/{id}/delete','SectionsController@destroy')->name('delete_section');
+				
+			});
+			/***********************************/
+			/**********************************/
+			Route::prefix('/lessons')->group(function()
+			{
+				Route::get('/index','LessonsController@index')->name('all_lessons');
+				Route::get('/','LessonsController@add')->name('add_lesson');
+				Route::post('/create','LessonsController@create')->name('create_lesson');
+				Route::get('/{id}','LessonsController@edit')->name('edit_lesson');				
+				Route::post('/{id}/update','LessonsController@update')->name('update_lesson');
+				Route::delete('/{id}/delete','LessonsController@destroy')->name('delete_lesson');
+
+			});
+			/***********************************/
+			/**********************************/
+
+			
+
+			
+
+});
+
 Route::namespace('user')->prefix('/user')->group(function()
 		{
-			Route::get('/','UsersController@index');
+			Route::get('/','UsersController@index')->name('user_main');
+			Route::get('/my_courses','UsersController@mycourses')->name('my_courses');
+			// Route::get('/chat','UsersController@chat')->name('chat');
 			
 
 		});
+
 
 
 

@@ -9,11 +9,9 @@ class Section extends Model
     protected $table="sections";
     protected $fillable=
     [
-        'course_id',
         'name',
-        'teacher_id',
-        'category_id',
-        'user_id',
+        'course_id',        
+        'teacher_id',             
         'created_at'
 
     ];

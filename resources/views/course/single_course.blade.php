@@ -46,7 +46,7 @@
 										</div>
 									</div>
 								</div>
-								<form  method="POST" action="{{route('view_counter',$courses->id)}}">								
+								<form style="display: none;" method="POST" action="{{route('view_counter',$courses->id)}}">								
 									@csrf
 									@method('PUT')									
 									<input type="text" id="postVisitCount" name="visitCount" value="{{$courses->visit_count}}">
@@ -200,37 +200,37 @@
 <script>
 	
 	
-	let visitCount=document.getElementById('postVisitCount').value;
-	let visitCountPlusOne=parseInt(visitCount)+1;
-	document.getElementById('postVisitCount').value=visitCountPlusOne;
-	let $formVar=$('form');
-	event.preventDefault();
-	$.ajax({		
-		url: $formVar.prop('{{ route('view_counter', ['put' => $courses->id ]) }}'),	
-		type: 'PUT',		
-		data:
-			$formVar.serialize()
+	// let visitCount=document.getElementById('postVisitCount').value;
+	// let visitCountPlusOne=parseInt(visitCount)+1;
+	// document.getElementById('postVisitCount').value=visitCountPlusOne;
+	// let $formVar=$('form');
+	// event.preventDefault();
+	// $.ajax({		
+	// 	url: $formVar.prop('{{ route('view_counter', ['put' => $courses->id ]) }}'),	
+	// 	type: 'PUT',		
+	// 	data:
+	// 		$formVar.serialize()
 			
 		
-	});
+	// });
 
 	
-		event.preventDefault();
-		const CSRF_TOKEN=$('meta[name="csrf-token"]').attr('content');
-		$.ajax({	
-			url:"{{url('/blog')}}",
-			type:'get',
-			data:{
-				CSRF_TOKEN
-			},
-			success:function (data){
-				$("#content").html(data)
-			}
+	// 	event.preventDefault();
+	// 	const CSRF_TOKEN=$('meta[name="csrf-token"]').attr('content');
+	// 	$.ajax({	
+	// 		url:"{{url('/blog')}}",
+	// 		type:'get',
+	// 		data:{
+	// 			CSRF_TOKEN
+	// 		},
+	// 		success:function (data){
+	// 			$("#content").html(data)
+	// 		}
 
 		
 
 
-	});
+	// });
 
 
 	

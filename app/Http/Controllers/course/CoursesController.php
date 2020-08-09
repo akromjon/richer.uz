@@ -21,7 +21,7 @@ class CoursesController extends Controller
     {   
         $course_categories=CourseCategory::all();
         $courses=Course::all();           
-        return view('course.all_courses',compact('courses','course_categories'));
+        return view('course.index',compact('courses','course_categories'));
     }
     public function view($slug)
     { 
@@ -35,7 +35,7 @@ class CoursesController extends Controller
         {
           return redirect('/404');
         }              
-        return view('course.single_course',compact('courses'));
+        return view('course.course',compact('courses'));
     }
     public function update(Request $request, $id)
     {

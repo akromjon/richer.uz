@@ -14,6 +14,7 @@ class Lesson extends Model
         'duration',
         'video',
         'section_id',
+        'course_id'
     ];
     // public function <section></section>()
     // {

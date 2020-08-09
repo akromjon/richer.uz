@@ -25,6 +25,6 @@ class LessonsController extends Controller
         {
           return redirect('/404');
         }
-        return view('course.single',compact('video','courses'));
+        return view('course.lesson',compact('video','courses'));
     }
 }

@@ -10,8 +10,7 @@ class Question extends Model
     
     protected $fillable=[
         'name',        
-        'quiz_id',
-        
+        'quiz_id',        
     ];
     public function options()
     {

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Course extends Model
 {
-	//
+
 
 	protected $table = 'courses';
 	protected $fillable = [
@@ -18,26 +18,21 @@ class Course extends Model
 		'cost',		
 		'language',
 		'level',
-		'duration',
-		'enrolled_student',
+		'duration',		
 		'confirm',
 		'meta_description',
 		'meta_keywords',
 		'visit_count'
-	];
-	//    public function getRouteName()
-	//    {
-	// 	   return 'slug';
-	//    }
+	];	
 
 	public function teacher()
 	{
-		return $this->belongsTo('App\Teacher');
+		return $this->belongsTo(Teacher::class);
 	}
 
 	public function sections()
 	{
-		return $this->hasMany('App\Section');
+		return $this->hasMany(Section::class);
 	}
 	public function lessons()
 	{
@@ -47,10 +42,11 @@ class Course extends Model
 	{
 		return $this->belongsTo(CourseCategory::class);
 	}
+	
 	public function comments()
-	{
-		return $this->hasMany('App\Comment');
-	}
+    {
+        return $this->hasMany(CourseComment::class)->orderBy('id','DESC');
+    }
 	public function quizes()
 	{
 		return $this->hasMany(Quiz::class);

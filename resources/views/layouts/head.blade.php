@@ -5,13 +5,4 @@
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/main_style.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-
 <meta name="HandheldFriendly" content="true">
-<style type="text/css">
-	.list_two:hover,
-	.list_four:hover,
-	.list_five:hover,
-	.last:hover {
-		text-decoration: none;
-	}
-</style>

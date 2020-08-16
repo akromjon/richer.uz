@@ -12,13 +12,14 @@
 
                 <div class="card-body">
                     <form action="{{route('update_section',$section->id)}}" method="POST" enctype="multipart/form-data">
-                       
+                    {{ method_field('PUT') }}
+                    @csrf
                         <div class="form-group">
                             <label for="id"></label>
                             <input id="id" placeholder="name of section" value="{{$section->name}}" class="form-control" type="text" name="name" required>
                         </div>
                         <div class="form-group">
-                            @csrf
+                            
                             <label for="category_id">Select a course</label>
                             <select class="form-control" id="course_id" name="course_id" required>
                                 @foreach($teachers as $section)

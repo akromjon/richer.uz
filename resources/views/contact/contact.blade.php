@@ -1,4 +1,16 @@
 @extends('layouts.master')
+@section('seo')
+<title>Biz Bilan Bog'lanish</title>
+<meta property="og:title" content="Biz Bilan Bog'lanish">
+<meta property="og:url" content="{{request()->url()}}">
+<meta property="og:image" content="">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:description" content="Yangiliklar, blogglar yoki ta'lim haqida so'ngi xabarlar bilan tanishing">
+<meta name="description" content="Yangiliklar, blogglar yoki ta'lim haqida so'ngi xabarlar bilan tanishing">
+<meta name="keywords" content="Universitetlar, Texnologiya, Onlayn Ta'lim, Onlayn Kurslar, Ingliz tili, Matematika, Tarix, Ona tili, Adabiyot, Video Kurslar">
+<meta name="robots" content="index, follow">
+<!--- this tags for ceo  end   -->
+@endsection
 @section('content')
 <section style="padding: 50px;" class="our-contact">
 	<div class="container">

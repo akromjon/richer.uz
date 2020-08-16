@@ -21,11 +21,12 @@ class TeacherController extends Controller
         $teacher->username=$request['username'];
         if($request->hasfile('avatar'))
         {
-            $file=$request->file('avatar');
-            $extention=$file->getClientOriginalExtension();
-            $filename=time().'.'.$extention;
-            $file->move('files/images/teachers',$filename);
-            $teacher->avatar=$filename;
+            $image=$request->file('avatar');
+            // // $extention=$image->getClientOrginalExtention();          
+            // $name=$image->getClientOriginalName();
+            // $imagename=$name;                
+            $image->store("files/teachers/","storage");
+            $teacher->avatar="/storage/files/teachers/".$image->hashName();          
         }
         else 
         {
@@ -41,7 +42,7 @@ class TeacherController extends Controller
         $teacher->subject=$request['subject'];
         $teacher->resume=$request['resume'];
         $teacher->save();
-        return redirect('/admin_system/teacher')->with('success','Done');
+        return redirect()->back();
     }
     public function index()
     {
@@ -62,16 +63,13 @@ class TeacherController extends Controller
         $teacher->username=$request['username'];
         if($request->hasfile('avatar'))
         {
-            $file=$request->file('avatar');
-            $extention=$file->getClientOriginalExtension();
-            $filename=time().'.'.$extention;
-            $file->move('files/images/teachers',$filename);
-            $teacher->avatar=$filename;
+            $image=$request->file('avatar');                          
+            $image->store("files/teachers/","storage");
+            $teacher->avatar="/storage/files/teachers/".$image->hashName(); 
         }
         else 
         {   
-            return $request;
-            $teacher->avatar;
+            $teacher->avatar=$request['avatar'];
         }
         $teacher->information=$request['information'];
         $teacher->confirm=$request['confirm'];
@@ -81,15 +79,15 @@ class TeacherController extends Controller
         $teacher->subject=$request['subject'];
         $teacher->resume=$request['resume'];
         $teacher->save();
-        return back()->with('success','Done');
+        return redirect()->back();
 
 
     }
     public function destroy($id)
     {
-      $lesson=Teacher::findOrFail($id);      
-      $lesson->delete();
-      return back();
+        $lesson=Teacher::findOrFail($id);      
+        $lesson->delete();
+        return redirect()->back();
     }
    
     

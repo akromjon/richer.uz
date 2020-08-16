@@ -28,6 +28,7 @@
                 document.getElementById("class").setAttribute("style", "display:none;");
             }
         }
+
         var regions = {};
         regions['Andijon'] = [
             'Qaysi tumandansiz',

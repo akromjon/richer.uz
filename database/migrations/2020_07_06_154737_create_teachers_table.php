@@ -21,11 +21,11 @@ class CreateTeachersTable extends Migration
             $table->string('avatar');
             $table->text('information');
             $table->boolean('confirm')->default(1);
-            $table->char('address',200);
+            $table->char('address',200)->nullable();
             $table->integer('phone_number')->unsigned();
             $table->string('email')->unique();            
             $table->char('subject',200);
-            $table->string('resume');            
+            $table->string('resume')->nullable();            
             $table->timestamps();
         });
     }

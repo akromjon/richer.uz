@@ -30,7 +30,7 @@
                                 <td class="txt-oflo">{{$section->id}}</td>
                                 <td class="txt-oflo">{{$section->name}}</td>
                                                                                        
-                                <td><a style="display: inline-block;" href="{{route('edit_section',$section->id)}}" class="label btn btn-success label-rounded">edit</a>
+                                <td><a style="display: inline-block; " href="{{route('edit_section',$section->id)}}" class="label btn btn-success label-rounded">edit</a>
                                     <form style="display: inline-block;" method="post" action="{{route('delete_section',$section->id)}}">
                                         @csrf
                                         {{ method_field('DELETE') }}

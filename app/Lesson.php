@@ -9,28 +9,29 @@ class Lesson extends Model
     protected $table="lessons";
     protected $fillabe=[
         'name',
+        'image', //// cover image
         'slug',
         'content',
         'duration',
         'video',
         'section_id',
-        'course_id'
+        'course_id',
+        'meta_description', /// this is for google CEO
+        'meta_keywords' /// this is google CEO
     ];
-    // public function <section></section>()
-    // {
-    //     return $this->belongsTo('App\CourseSection');
-    // }
+    
     
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\LessonComment')->orderBy('id','DESC');
     }
     public function section()
     {
         return $this->belonsTo('App\Section');
     }
-    // public function getRouteName()
-    // {
-    //     return 'slug';
-    // }
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+    
 }

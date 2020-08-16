@@ -18,7 +18,9 @@ class Article extends Model
         'blog_id',
         'tags',
         'writer',
-        'rescourse'        
+        'rescourse',
+        'meta_description',
+        'meta_keywords'       
     ];
     public function blog()
     {
@@ -33,12 +35,12 @@ class Article extends Model
         return static::all();
         
     }
-    public function user()
-    {
-        return $this->BelongsTo('App\User');
-    }
+    // public function user()
+    // {
+    //     return $this->BelongsTo('App\User');
+    // }
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\ArticleComment')->orderBy('id','DESC');
     }
 }

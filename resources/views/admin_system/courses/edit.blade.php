@@ -12,6 +12,7 @@
                 <div class="card-body">
                     <form action="{{route('update_course',$course->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        {{ method_field('PUT') }}
                         <div class="form-group">
                             <label for="category_id">Select a teacher</label>
                             <select class="form-control" id="category_id" name="teacher_id">
@@ -45,7 +46,7 @@
                             <input id="image" class="form-control-file" type="file" name="image">
                         </div>
                         Selected Image:<br>
-                        <img style="width: 500px; height:300px;" src="{{asset('files/courses/')}}/{{$course->slug}}/{{$course->image}}" alt="6.png"><br>
+                        <img style="width: 500px; height:300px;" src="{{$course->image}}" alt="6.png"><br>
                         <div style="display: none;" class="form-group">
                             <input value="{{$course->image}}" class="form-control" type="hidden" name="image">
                         </div>
@@ -63,7 +64,7 @@
                         </div>
                         
                             <video width="500" height="300" controls>
-                                <source src="{{asset('files/courses/')}}/{{$course->slug}}/{{$course->intro}}" type="video/mp4">
+                                <source src="{{$course->intro}}" type="video/mp4">
                                 <source src="movie.ogg" type="video/ogg">
                                 Your browser does not support the video tag.
                             </video>

@@ -44,12 +44,12 @@ class CoursesController extends Controller
         if($request->hasfile('image'))
         {
             
-            $file=$request->file('image');
-            $extention=$file->getClientOriginalExtension();
-            $name=$file->getClientOriginalName();
-            $filename=$name;       
-            $file->move('files/courses/'.'/'.$folder,$filename);
-            $course->image=$filename;
+            $image=$request->file('image');
+            // // $extention=$image->getClientOrginalExtention();          
+            // $name=$image->getClientOriginalName();
+            // $imagename=$name;                
+            $image->store("files/courses/{$request['slug']}","storage");
+            $course->image="/storage/files/courses/{$request['slug']}/".$image->hashName();
         }
         else 
         {   
@@ -60,12 +60,13 @@ class CoursesController extends Controller
         $course->information=$request['information'];
         if($request->hasfile('intro'))
         {
+                 
                 $video=$request->file('intro');
-                $extention=$video->getClientOriginalExtension();
-                $name=$video->getClientOriginalName();
-                $videoname=$name;                
-                $video->move('files/courses/'.'/'.$folder,$videoname);
-                $course->intro=$videoname;
+                // // $extention=$image->getClientOrginalExtention();          
+                // $name=$image->getClientOriginalName();
+                // $imagename=$name;                
+                $video->store("files/courses/{$request['slug']}","storage");
+                $course->intro="/storage/files/courses/{$request['slug']}/".$video->hashName();              
         }
         else 
         {   
@@ -80,9 +81,19 @@ class CoursesController extends Controller
         $course->meta_description=$request['meta_description'];
         $course->meta_keywords=$request['meta_keywords'];
         $course->save();
-        return back();
+        return redirect()->back();
     }
+    public function update_confirmation(Request $request, $id)
+    {   
+        $confirm = Course::findOrFail($id);        
+        if ($confirm) {
+            $confirm->confirm = $request['confirm'];
+            $confirm->save();
+            
+        }
+        return back();
 
+    }
     public function update(Request $request, $id)
     {
         $course=Course::findOrFail($id);       
@@ -95,12 +106,14 @@ class CoursesController extends Controller
     
             if($request->hasfile('image'))
             {                
-                $file=$request->file('image');
-                $extention=$file->getClientOriginalExtension();
-                $name=$file->getClientOriginalName();
-                $filename=$name;
-                $file->move('files/courses/'.'/'.$folder,$filename);
-                $course->image=$filename;
+            $image=$request->file('image');
+           
+            // // $extention=$image->getClientOrginalExtention();          
+            // $name=$image->getClientOriginalName();
+            // $imagename=$name;                
+            $image->store("files/courses/{$request['slug']}","storage");
+            $base64 = base64_encode($image->hashName());
+            $course->image="/storage/files/courses/{$request['slug']}/".$image->hashName();
             }
             else 
             {   
@@ -111,11 +124,11 @@ class CoursesController extends Controller
             if($request->hasfile('intro'))
             {
                 $video=$request->file('intro');
-                $extention=$video->getClientOriginalExtension();
-                $name=$video->getClientOriginalName();
-                $videoname=$name;                
-                $video->move('files/courses/'.'/'.$folder,$videoname);
-                $course->intro=$videoname;
+                // // $extention=$image->getClientOrginalExtention();          
+                // $name=$image->getClientOriginalName();
+                // $imagename=$name;                
+                $video->store("files/courses/{$request['slug']}","storage");
+                $course->intro="storage/files/courses/{$request['slug']}/".$video->hashName();  
             }
             else 
             {   
@@ -129,14 +142,14 @@ class CoursesController extends Controller
             $course->meta_description=$request['meta_description'];
             $course->meta_keywords=$request['meta_keywords'];
             $course->save();
-            return back();
+            return redirect()->back();
             
     }
     public function destroy($id)
     {
       $course=Course::findOrFail($id);      
       $course->delete();
-      return back();
+      return redirect()->back();
     }
     
 }

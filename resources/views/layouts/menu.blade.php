@@ -11,7 +11,7 @@
 		                <span class="icon-bar"></span>
 		            </button>
 		        </div>
-		        <a href="{{route('home')}}" class="navbar_brand float-left dn-smd">
+		        <a href="{{route('home_page')}}" class="navbar_brand float-left dn-smd">
 		            <img class="logo1 img-fluid" src="{{asset('assets/images/header-logo.png')}}" alt="header-logo.png">
 		            <img class="logo2 img-fluid" src="{{asset('assets/images/header-logo2.png')}}" alt="header-logo2.png">
 		            <span>richer.uz</span>

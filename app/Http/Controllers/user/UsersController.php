@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('auth');
+    }
     public function index()
     {
         return view('user.index');
@@ -15,8 +19,8 @@ class UsersController extends Controller
     {
         return view('user.my_courses');
     }
-    public function chat()
-    {
-        return view('user.chat');
-    }
+    // public function chat()
+    // {
+    //     return view('user.chat');
+    // }
 }

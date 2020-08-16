@@ -1,20 +1,14 @@
 @extends('layouts.master')
 @section('seo')
-<!--- this tags for ceo     -->
-<meta name="description" content="Uydan chiqmasdan turib onlayn ingliz tili kurslarini olish">
-<meta name="keywords" content="ingliz tilini o'rganish, dasturlash tillilarini o'rganish, elementart kursi, bepul ta'lim, onlayn ta'lim, sifatli ta'lim">
-<meta property="og:title" content="Onlayn kurslar. Uydan chiqmasdan o'rganish">
-<!-- <meta property="og:description" content="long text">
-
-<meta property="og:type" content="article">
+<title>Kurslar</title>
+<meta property="og:title" content="Kurslar">
 <meta property="og:url" content="{{request()->url()}}">
-<meta property="og:image" content="the thumnail is here">
-<meta property="og:site_name" content="Richer.uz">
-
-<meta property="og:type" content="video">
-<meta property='og:video' content='url'>
-<meta property="og:video:height" content="640" />
-<meta property="og:video:width" content="385" /> -->
+<meta property="og:image" content="">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:description" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow">
 <!--- this tags for ceo  end   -->
 @endsection
 @section('content')

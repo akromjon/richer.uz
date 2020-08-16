@@ -16,6 +16,7 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->char('title',150);
+            $table->bigInteger('view')->nullable()->unsigned();
             $table->string('slug')->unique();
             $table->string('cover_picture')->nullable(); // this is cover picture
             $table->longText('content'); // this is a content which gets a long text
@@ -24,6 +25,8 @@ class CreateArticlesTable extends Migration
             $table->string('tags')->nullable();
             $table->char('writer',100)->nullable();
             $table->string('rescourse')->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('blog_id')->references('id')->on('blog_categories')->onDelete('cascade');
             $table->timestamps();

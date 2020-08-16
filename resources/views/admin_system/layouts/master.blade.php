@@ -109,6 +109,12 @@
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_users')}}" aria-expanded="false">
+                                <i class="mdi mdi-account-plus"></i>
+                                <span class="hide-menu">Users</span>
+                            </a>
+                        </li>
                         <div class="navbar-header" data-logobg="skin5">
                             <!-- This is for the sidebar toggle which is visible on mobile only -->
                             
@@ -116,7 +122,7 @@
                             <!-- Logo -->
                             <!-- ============================================================== -->
                             <div class="navbar-brand">
-                                <a style="color: white;margin-left: 15px;" href="#" class="logo"> Teachers</a>
+                                <a style="color: white;margin-left: 15px;" href="{{route('all_teachers')}}" class="logo"> Teacher Settings</a>
                             </div>
                             <!-- ============================================================== -->
                             <!-- End Logo -->
@@ -135,11 +141,11 @@
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_teachers')}}" aria-expanded="false">
                                 <i class="mdi mdi-account-settings-variant"></i>
-                                <span class="hide-menu">teacher settings</span>
+                                <span class="hide-menu">teacher controls</span>
                             </a>
                         </li>
                         <div class="navbar-brand">
-                                <a style="color: white;margin-left: 15px;" href="#" class="logo"> Courses</a>
+                                <a style="color: white;margin-left: 15px;" href="{{route('all_categories')}}" class="logo"> Course Settings</a>
                             </div>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_categories')}}" aria-expanded="false">
@@ -159,12 +165,52 @@
                                 <span class="hide-menu">Sections</span>
                             </a>
                         </li>
+                       
+                       
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_lessons')}}" aria-expanded="false">
                                 <i class="mdi mdi-book-open-page-variant"></i>
                                 <span class="hide-menu">Lessons</span>
                             </a>
                         </li>
+                        
+                        <li class="sidebar-item ">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_quizes')}}" aria-expanded="false">
+                                <i class="mdi mdi-check-circle-outline"></i>
+                                <span class="hide-menu">Quizes</span>
+                            </a>
+                        </li>
+                        <div class="navbar-brand">
+                                <a style="color: white;margin-left: 15px;" href="{{route('all_blogs')}}" class="logo"> Blog Settings</a>
+                        </div>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_blogs')}}" aria-expanded="false">
+                                <i class="mdi mdi-newspaper"></i>
+                                <span class="hide-menu">Blogs</span>
+                            </a>
+                        </li>
+                        <div class="navbar-brand">
+                                <a style="color: white;margin-left: 15px;" href="{{route('all_comments')}}" class="logo"> Comment Settings</a>
+                        </div>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_comments')}}" aria-expanded="false">
+                                <i class="mdi mdi-comment-multiple-outline"></i>
+                                <span class="hide-menu">Course Comments</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_lesson_comments')}}" aria-expanded="false">
+                                <i class="mdi mdi-comment-check"></i>
+                                <span class="hide-menu">Lesson Comments</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('all_article_comments')}}" aria-expanded="false">
+                                <i class="mdi mdi-comment-text"></i>
+                                <span class="hide-menu">Article Comments</span>
+                            </a>
+                        </li>
+                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

@@ -11,6 +11,7 @@
                 <div class="card-body">
                     <form action="{{route('update_teacher',$teacher->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        {{ method_field('PUT') }}
                         <div class="form-group">
                             <label for="id">Teacher ID</label>
                             <input id="id" placeholder="teacher ID" value="{{$teacher->teacher_id}}" class="form-control" type="number" name="teacher_id" required>
@@ -28,8 +29,10 @@
 
                         <div class="form-group">
                             <label for="image">Upload image (image should be 120 x 120 pixels)</label>
-                            <input  id="image" value="{{$teacher->avatar}}" class="form-control-file" type="file" name="avatar" required>
+                            <input  id="image"  class="form-control-file" type="file" name="avatar" >
+                            <input  id="image" value="{{$teacher->avatar}}"  class="form-control-file" type="hidden" name="avatar" >
                         </div>
+                        <img src="{{$teacher->avatar}}" alt="teacher avatar">
                         <div class="form-group">
                             <label for="content">Information about a teacher</label>
                             <textarea id="content"  placeholder="Post content" class="form-control" cols="5" rows="3" name="information" required>{{$teacher->information}}</textarea>

@@ -44,4 +44,33 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Answer');
     }
+    // public function comments()
+    // {
+    //     return $this->hasMany('App\ArticleComment');
+    // }
+    // public function CourseComments()
+    // {
+    //     return $this->hasMany('App\CourseComment');
+    // }
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class); 
+    }
+    public function hasAnyRoles($roles)
+    {
+        if($this->roles()->whereIn('name',$roles)->first())
+        {
+            return true;
+        }
+        return false;
+    }
+    public function hasRole($role)
+    {
+        if($this->roles()->where('name',$role)->first())
+        {
+            return true;
+        }
+        return false;
+    }
 }
+

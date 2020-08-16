@@ -2,7 +2,7 @@
 <html dir="ltr" lang="en" class=" js no-touch csstransitions">
 <head>
 	@include('layouts.head')
-	<title>richer.uz | sifatli onlayn kurslar</title>
+	@yield('seo')
 	
 	
 </head>

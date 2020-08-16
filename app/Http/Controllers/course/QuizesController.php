@@ -13,21 +13,19 @@ class QuizesController extends Controller
     
     public function quiz($id,$title)
     {                
-        // $courses=Course::first();
-        // $all_sections=Section::all();
-        // $courses=Course::where('id','=',$slug)->firstOrFail();        
+            
         $courses=Course::where('slug','=',$id)->firstOrFail();
         $question_category=Quiz::where('slug','=',$title)->firstOrFail();      
         if($question_category->course_id==$courses->id)
         {
-            
+            return view('course.quiz',compact('question_category','courses')); 
         }
         else
         {
-          return redirect('/404');
+          return abort(404);
         }       
         
-        return view('course.quiz',compact('question_category','courses'));
+       
     }
     public function store(Request $request)
     {
@@ -38,7 +36,7 @@ class QuizesController extends Controller
         $user_answer->user_id=$request['user_id'];
         $user_answer->mark=$request['mark'];      
         $user_answer->save();
-        return back();       
+        return redirect()->back();
        
     }
 }

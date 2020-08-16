@@ -15,13 +15,16 @@ class CreateLessonsTable extends Migration
     {
         Schema::create('lessons', function (Blueprint $table) {
             $table->id();
-            $table->string('name');            
+            $table->string('name');
+            $table->string('image')->nullable();    
             $table->string('slug')->unique();
             $table->longText('content'); // this is not migrated yet
             $table->integer('duration');
             $table->string('video');
             $table->bigInteger('section_id')->unsigned()->nullable();
             $table->bigInteger('course_id')->unsigned()->nullable();
+            $table->string('meta_description')->nullable();
+            $table->string('meta_keywords')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade'); 
             $table->foreign('section_id')->references('id')->on('sections')->onDelete('cascade');
             $table->timestamps();

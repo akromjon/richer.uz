@@ -15,6 +15,8 @@
                             <tr>
                                 <th class="border-top-0">#</th>
                                 <th class="border-top-0">NAME</th>
+                                <th class="border-top-0">META</th>
+                                <th class="border-top-0">KEYWORDS</th>
                                 <th class="border-top-0">ACTION</th>                                
                                 <th class="border-top-0">URL</th>                                
                                 <th class="border-top-0">DURATION</th>
@@ -32,8 +34,10 @@
                                 @foreach($teacher->courses as $course)
                                 <td class="txt-oflo">{{$lesson->id}}</td>
                                 <td class="txt-oflo">{{$lesson->name}}</td>
-                                <td><a style="display: inline-block;" href="{{route('edit_lesson',$lesson->id)}}" class="label btn btn-success label-rounded">edit</a>
-                                    <form style="display: inline-block;" method="post" action="{{route('delete_lesson',$lesson->id)}}">
+                                <td class="txt-oflo">{{$lesson->meta_description}}</td>
+                                <td class="txt-oflo">{{$lesson->meta_keywords}}</td>
+                                <td><a style="display: inline-block; width:60px;" href="{{route('edit_lesson',$lesson->id)}}" class="label btn btn-success label-rounded">edit</a>
+                                    <form style="display: inline-block; width:60px;" method="post" action="{{route('delete_lesson',$lesson->id)}}">
                                         @csrf
                                         {{ method_field('DELETE') }}
                                         <button style="display: inline-block;" type="submit" onclick="myFunction()" class="btn btn-danger">delete</button>

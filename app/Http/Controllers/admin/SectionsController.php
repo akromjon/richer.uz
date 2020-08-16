@@ -36,7 +36,7 @@ class SectionsController extends Controller
         $section->teacher_id=$request['teacher_id'];
         $section->show=$request['show'];
         $section->save();
-        return back();
+        return redirect()->back();
     }
 
    
@@ -67,7 +67,7 @@ class SectionsController extends Controller
         $section->teacher_id=$request['teacher_id'];
         $section->show=$request['show'];
         $section->save();
-        return back();
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +80,6 @@ class SectionsController extends Controller
     {
         $section=Section::findOrFail($id);
         $section->delete();
-        return back();
+        return redirect()->back();
     }
 }

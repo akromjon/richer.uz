@@ -31,7 +31,7 @@
                                 @foreach($teachers as $teacher)
                                 <td class="txt-oflo">{{$teacher->teacher_id}}</td>
                                 <td class="txt-oflo">{{$teacher->name}}</td>
-                                <td class="txt-oflo"><img style="width: 50px; height:50px;" src="{{asset('files/images/teachers/')}}/{{$teacher->avatar}}" alt="6.png"></td>
+                                <td class="txt-oflo"><img style="width: 50px; height:50px;" src="{{$teacher->avatar}}" alt="6.png"></td>
                                 <td><a href="{{route('edit_teacher',$teacher->id)}}" class="label btn btn-success label-rounded">edit</a>
 
                                     <form method="post" action="{{route('delete_teacher',$teacher->id)}}">

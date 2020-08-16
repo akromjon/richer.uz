@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCoursesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
@@ -23,10 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('image')->nullable();
             $table->text('information');
             $table->string('intro');           
-            $table->string('cost'); // this changed from integer to string to make some strings
-            $table->integer('section');
-            $table->integer('videos');
-            $table->integer('quiz');
+            $table->string('cost'); // this changed from integer to string to make some strings      
             $table->string('language'); // it can be uzbek or russian or english
             $table->string('level'); // it can be beginner, elementary, intermediate
             $table->integer ('duration'); // this is the duration of whole course
@@ -42,11 +35,7 @@ class CreateCoursesTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+  
     public function down()
     {
         Schema::dropIfExists('courses');

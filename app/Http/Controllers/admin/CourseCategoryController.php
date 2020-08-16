@@ -26,7 +26,7 @@ class CourseCategoryController extends Controller
         $category->name=$request['name'];
         $category->teacher_id=$request['teacher_id'];
         $category->save();
-        return back();
+        return redirect()->back();
     }
     public function edit($id)
     {   
@@ -40,13 +40,13 @@ class CourseCategoryController extends Controller
         $category->name=$request['name'];
         $category->teacher_id=$request['teacher_id'];
         $category->save();
-        return back();
+        return redirect()->back();
     }
     public function destroy($id)
     {
       $lesson=CourseCategory::findOrFail($id);      
       $lesson->delete();
-      return back();
+      return redirect()->back();
 
     }
    

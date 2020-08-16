@@ -52,7 +52,7 @@ function nextques()
           result.style.display='';
           result2.value=f*100;
           result3.type="submit";
-          result.textContent="Sizda: "+(f*100)+"  /100%";  
+          result.textContent="Sizda: "+(f*100)+" /100%";  
           result=f*100;
           
           if(result>=60){

@@ -1,4 +1,16 @@
 @extends('layouts.master')
+@section('seo')
+<title>{{$question_category->name}}</title>
+<meta property="og:title" content="{{$question_category->name}}">
+<meta property="og:url" content="{{request()->url()}}">
+<meta property="og:image" content="">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:description" content="">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="robots" content="index, follow">
+<!--- this tags for ceo  end   -->
+@endsection
 @section('content')
 <section class="our-team pb40" style="margin-top:20px;">
     <div class="container">

@@ -1,4 +1,16 @@
 @extends('layouts.master')
+@section('seo')
+<title>Mening Kurslarim</title>
+<meta property="og:title" content="Mening Kurslarim">
+<meta property="og:url" content="{{request()->url()}}">
+<meta property="og:image" content="">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:description" content="Yangiliklar, blogglar yoki ta'lim haqida so'ngi xabarlar bilan tanishing">
+<meta name="description" content="Yangiliklar, blogglar yoki ta'lim haqida so'ngi xabarlar bilan tanishing">
+<meta name="keywords" content="Universitetlar, Texnologiya, Onlayn Ta'lim, Onlayn Kurslar, Ingliz tili, Matematika, Tarix, Ona tili, Adabiyot, Video Kurslar">
+<meta name="robots" content="index, follow">
+<!--- this tags for ceo  end   -->
+@endsection
 @section('content')
 <section class="blog_post_container mb-3 mt-3">
     <div class="container">
@@ -11,7 +23,6 @@
                                 <div class="details" style="padding:25px; width: 100%;">
                                     <img style="border-radius:50%;width:110px; height:110px;" src="http://127.0.0.1:8000/assets/images/team/6.png" class="mr-3 mx-auto d-block" alt="review1.png"><br>
                                     <h3 style="text-align:center;" class="">Alisher Ergashev, Sizning Kurslaringiz</h3><br>
-
                                     <div class="row" id="masonry_abc" style="position: relative; height: 403.406px;">
                                         <div class="col-md-6 col-lg-4 col-xl-4	1" style="position: absolute; left: 0px; top: 0px;">
 

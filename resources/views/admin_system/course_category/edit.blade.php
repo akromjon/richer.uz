@@ -12,6 +12,7 @@
                 <div class="card-body">
                     <form action="{{route('update_category',$category->id)}}" method="POST" enctype="multipart/form-data">
                         @csrf 
+                        {{ method_field('PUT') }}
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input id="name" placeholder="course category name" value="{{$category->name}}" class="form-control" type="text" name="name" required>

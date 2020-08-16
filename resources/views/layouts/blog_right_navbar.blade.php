@@ -13,7 +13,7 @@
                            
 								<h4 class="title"> Kategoriya <hr></h4>
                                 @foreach($blog_categories as $blog)
-								<a href="{{route('category_blog',$blog->title)}}">
+								<a href="{{route('category_blog',$blog->slug)}}">
 								<li class="list-group-item d-flex justify-content-between align-items-center">
                                     {!!$blog->icon!!} {{$blog->title}}</i><span class="float-right"><span class="badge badge-pill badge-light">{{$blog->articles->count()}}</span></span>
 								</li>
@@ -40,9 +40,9 @@
 						<div class="blog_recent_post_widget media_widget">
 							<h4 class="title">So'ngi Yangiliklar</h4>
 							<hr>
-                            @foreach($articles as $article)
+                            @foreach($articles->take(5) as $article)
 							<div class="media">
-								<img class="align-self-start mr-3" src="{{asset('assets/images/blog/s1.jpg')}}" alt="s1.jpg">
+								<img class="align-self-start mr-3" src="{{$article->cover_picture}}" alt="s1.jpg">
 								<div class="media-body">
                                 <a href="{{route('news_view',$article->slug)}}"><h5 title="{{$article->title}}" class="mt-0 post_title">{{ Illuminate\Support\Str::limit($article->title, 50) }}</h5></a>
 							    	<a href="#">{{$article->created_at->diffForHumans()}}.</a>

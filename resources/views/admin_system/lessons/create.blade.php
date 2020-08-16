@@ -17,6 +17,10 @@
                             <input id="lesson" placeholder="name" value="" class="form-control" type="text" name="name" required>
                         </div>
                         <div class="form-group">
+                            <label for="image"><strong>Upload a cover picture that appears in the lesson</strong></label>
+                            <input id="image" class="form-control-file" type="file" name="image" required>
+                        </div>
+                        <div class="form-group">
                             <label for="url">URL</label>
                             <input id="url" placeholder="ulr" value="" class="form-control" type="text" name="slug" required>
                         </div>
@@ -57,7 +61,15 @@
                                 <option value="{{$section->id}}" selected>{{$section->name}}</option>
                                 @endforeach                                                       
                             </select>
-                        </div>  
+                        </div> 
+                        <div class="form-group">
+                            <label for="meta">Meta Description</label>
+                            <input id="meta" placeholder="name" value="" class="form-control" type="text" name="meta_description" required>
+                        </div> 
+                        <div class="form-group">
+                            <label for="meta_keywords">Meta Keywords</label>
+                            <input id="meta_keywords" placeholder="name" value="" class="form-control" type="text" name="meta_keywords" required>
+                        </div> 
                                            
                                         
 
